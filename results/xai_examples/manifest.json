@@ -1,0 +1,2359 @@
+{
+  "checkpoint": "C:\\Users\\Wijdan\\Documents\\GEMASTIK\\Data Mining\\checkpoints\\full_run_v3_vision\\best",
+  "seed": 0,
+  "examples": [
+    {
+      "index": 81,
+      "tag": "idx0081_ledakan",
+      "pre_image_path": "test_images\\beriut_explosion_pre_42.png",
+      "post_image_path": "test_images\\beriut_explosion_post_42.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "ledakan",
+      "gen_bencana": "ledakan",
+      "bencana_correct": true,
+      "n_emitted_tokens": 117,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.000174019587575458,
+        "rollout_vit": 0.17293787002563477,
+        "last_layer": 7.292952068382874e-05,
+        "mean_layers": 7.324820762732998e-05
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.23868559300899506,
+            "post": 0.7613143920898438
+          },
+          "BANGUNAN": {
+            "n_tokens": 11,
+            "pre": 0.24217824637889862,
+            "post": 0.757821798324585
+          },
+          "JALAN": {
+            "n_tokens": 13,
+            "pre": 0.2418237030506134,
+            "post": 0.7581762671470642
+          },
+          "VEGETASI": {
+            "n_tokens": 10,
+            "pre": 0.23362691700458527,
+            "post": 0.7663730382919312
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.23343336582183838,
+            "post": 0.7665666937828064
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.2328457236289978,
+            "post": 0.7671542763710022
+          },
+          "KESIMPULAN": {
+            "n_tokens": 24,
+            "pre": 0.2312408834695816,
+            "post": 0.7687590718269348
+          },
+          "__ALL__": {
+            "n_tokens": 96,
+            "pre": 0.23498815298080444,
+            "post": 0.7650119662284851
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4934755563735962,
+            "post": 0.5065244436264038
+          },
+          "BANGUNAN": {
+            "n_tokens": 11,
+            "pre": 0.4934942424297333,
+            "post": 0.5065057277679443
+          },
+          "JALAN": {
+            "n_tokens": 13,
+            "pre": 0.4934999644756317,
+            "post": 0.5064999461174011
+          },
+          "VEGETASI": {
+            "n_tokens": 10,
+            "pre": 0.49349483847618103,
+            "post": 0.5065051317214966
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.49349358677864075,
+            "post": 0.5065064430236816
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.4934961497783661,
+            "post": 0.5065038204193115
+          },
+          "KESIMPULAN": {
+            "n_tokens": 24,
+            "pre": 0.49349460005760193,
+            "post": 0.5065054297447205
+          },
+          "__ALL__": {
+            "n_tokens": 96,
+            "pre": 0.4934951364994049,
+            "post": 0.5065048336982727
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.2279975563287735,
+            "post": 0.7720025777816772
+          },
+          "BANGUNAN": {
+            "n_tokens": 11,
+            "pre": 0.24162302911281586,
+            "post": 0.7583770155906677
+          },
+          "JALAN": {
+            "n_tokens": 13,
+            "pre": 0.23962578177452087,
+            "post": 0.760374128818512
+          },
+          "VEGETASI": {
+            "n_tokens": 10,
+            "pre": 0.22812998294830322,
+            "post": 0.771869957447052
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.22435301542282104,
+            "post": 0.775646984577179
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.22557735443115234,
+            "post": 0.7744227051734924
+          },
+          "KESIMPULAN": {
+            "n_tokens": 24,
+            "pre": 0.22312487661838531,
+            "post": 0.7768751978874207
+          },
+          "__ALL__": {
+            "n_tokens": 96,
+            "pre": 0.2287539839744568,
+            "post": 0.7712460160255432
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.2258531004190445,
+            "post": 0.7741469740867615
+          },
+          "BANGUNAN": {
+            "n_tokens": 11,
+            "pre": 0.21941542625427246,
+            "post": 0.7805845737457275
+          },
+          "JALAN": {
+            "n_tokens": 13,
+            "pre": 0.21686005592346191,
+            "post": 0.7831399440765381
+          },
+          "VEGETASI": {
+            "n_tokens": 10,
+            "pre": 0.21329085528850555,
+            "post": 0.786709189414978
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.2152099907398224,
+            "post": 0.7847899794578552
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.2133978009223938,
+            "post": 0.786602258682251
+          },
+          "KESIMPULAN": {
+            "n_tokens": 24,
+            "pre": 0.2138071209192276,
+            "post": 0.7861928939819336
+          },
+          "__ALL__": {
+            "n_tokens": 96,
+            "pre": 0.21513575315475464,
+            "post": 0.7848642468452454
+          }
+        }
+      },
+      "files": {
+        "original": "idx0081_ledakan_original.png",
+        "rollout_sections": "idx0081_ledakan_rollout.png",
+        "rollout_tokens": "idx0081_ledakan_tokens.png",
+        "lastlayer_raw_sections": "idx0081_ledakan_lastlayer_raw.png",
+        "caption": "idx0081_ledakan_caption.txt",
+        "rejected_rollout_vit": "idx0081_ledakan_REJECTED_rollout_vit.png"
+      }
+    },
+    {
+      "index": 380,
+      "tag": "idx0380_badai",
+      "pre_image_path": "test_images\\hurricane_michael_00000441_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000441_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "bencana_correct": true,
+      "n_emitted_tokens": 153,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.00023098845849744976,
+        "rollout_vit": 0.18236571550369263,
+        "last_layer": 0.00012413886724971235,
+        "mean_layers": 0.00011920919496333227
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.5943230390548706,
+            "post": 0.40567710995674133
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.5949426293373108,
+            "post": 0.40505731105804443
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.5961406230926514,
+            "post": 0.4038594365119934
+          },
+          "VEGETASI": {
+            "n_tokens": 30,
+            "pre": 0.5973716378211975,
+            "post": 0.4026283919811249
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.5973983407020569,
+            "post": 0.40260159969329834
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.5981854200363159,
+            "post": 0.4018145799636841
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.5979630947113037,
+            "post": 0.40203696489334106
+          },
+          "__ALL__": {
+            "n_tokens": 132,
+            "pre": 0.5970412492752075,
+            "post": 0.4029586911201477
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.5235267877578735,
+            "post": 0.476473331451416
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.5235353112220764,
+            "post": 0.47646477818489075
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.5235412120819092,
+            "post": 0.4764588475227356
+          },
+          "VEGETASI": {
+            "n_tokens": 30,
+            "pre": 0.5235393643379211,
+            "post": 0.47646063566207886
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.5235403180122375,
+            "post": 0.47645971179008484
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.5235413908958435,
+            "post": 0.4764586091041565
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.5235416293144226,
+            "post": 0.476458340883255
+          },
+          "__ALL__": {
+            "n_tokens": 132,
+            "pre": 0.5235396027565002,
+            "post": 0.476460337638855
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.6053829193115234,
+            "post": 0.39461708068847656
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.6030504107475281,
+            "post": 0.39694949984550476
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.6034661531448364,
+            "post": 0.3965337872505188
+          },
+          "VEGETASI": {
+            "n_tokens": 30,
+            "pre": 0.6059728264808655,
+            "post": 0.3940272033214569
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.6054989695549011,
+            "post": 0.3945010304450989
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.6070936322212219,
+            "post": 0.39290639758110046
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.6057093143463135,
+            "post": 0.3942907154560089
+          },
+          "__ALL__": {
+            "n_tokens": 132,
+            "pre": 0.6052376627922058,
+            "post": 0.3947623670101166
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.6018810272216797,
+            "post": 0.3981190025806427
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.6038157343864441,
+            "post": 0.3961842656135559
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.6052003502845764,
+            "post": 0.3947996497154236
+          },
+          "VEGETASI": {
+            "n_tokens": 30,
+            "pre": 0.6063277721405029,
+            "post": 0.39367228746414185
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.6054471731185913,
+            "post": 0.3945528268814087
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.6063087582588196,
+            "post": 0.39369115233421326
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.6062482595443726,
+            "post": 0.39375168085098267
+          },
+          "__ALL__": {
+            "n_tokens": 132,
+            "pre": 0.6056021451950073,
+            "post": 0.3943978548049927
+          }
+        }
+      },
+      "files": {
+        "original": "idx0380_badai_original.png",
+        "rollout_sections": "idx0380_badai_rollout.png",
+        "rollout_tokens": "idx0380_badai_tokens.png",
+        "lastlayer_raw_sections": "idx0380_badai_lastlayer_raw.png",
+        "caption": "idx0380_badai_caption.txt"
+      }
+    },
+    {
+      "index": 471,
+      "tag": "idx0471_tornado",
+      "pre_image_path": "test_images\\joplin_tornado_00000080_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000080_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "bencana_correct": false,
+      "n_emitted_tokens": 150,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.0002130726061295718,
+        "rollout_vit": 0.20485422015190125,
+        "last_layer": 9.342203702544793e-05,
+        "mean_layers": 9.827048052102327e-05
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.43853768706321716,
+            "post": 0.5614622831344604
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.4392067790031433,
+            "post": 0.5607931613922119
+          },
+          "JALAN": {
+            "n_tokens": 26,
+            "pre": 0.43869927525520325,
+            "post": 0.5613007545471191
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.4373281002044678,
+            "post": 0.5626718997955322
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.43733906745910645,
+            "post": 0.5626608729362488
+          },
+          "PERTANIAN": {
+            "n_tokens": 12,
+            "pre": 0.43694043159484863,
+            "post": 0.5630595684051514
+          },
+          "KESIMPULAN": {
+            "n_tokens": 25,
+            "pre": 0.4367097020149231,
+            "post": 0.5632902979850769
+          },
+          "__ALL__": {
+            "n_tokens": 128,
+            "pre": 0.43778350949287415,
+            "post": 0.562216579914093
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4965393543243408,
+            "post": 0.5034604668617249
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.4965376555919647,
+            "post": 0.5034623742103577
+          },
+          "JALAN": {
+            "n_tokens": 26,
+            "pre": 0.4965384900569916,
+            "post": 0.503461480140686
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.496542364358902,
+            "post": 0.5034576654434204
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.4965418875217438,
+            "post": 0.5034581422805786
+          },
+          "PERTANIAN": {
+            "n_tokens": 12,
+            "pre": 0.49654483795166016,
+            "post": 0.5034552216529846
+          },
+          "KESIMPULAN": {
+            "n_tokens": 25,
+            "pre": 0.4965457618236542,
+            "post": 0.5034542679786682
+          },
+          "__ALL__": {
+            "n_tokens": 128,
+            "pre": 0.4965415894985199,
+            "post": 0.5034584403038025
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4338102638721466,
+            "post": 0.566189706325531
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.4367067217826843,
+            "post": 0.5632932782173157
+          },
+          "JALAN": {
+            "n_tokens": 26,
+            "pre": 0.4360341727733612,
+            "post": 0.5639657378196716
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.43452948331832886,
+            "post": 0.5654705166816711
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.43427422642707825,
+            "post": 0.5657258033752441
+          },
+          "PERTANIAN": {
+            "n_tokens": 12,
+            "pre": 0.43346431851387024,
+            "post": 0.5665356516838074
+          },
+          "KESIMPULAN": {
+            "n_tokens": 25,
+            "pre": 0.4334193468093872,
+            "post": 0.5665806531906128
+          },
+          "__ALL__": {
+            "n_tokens": 128,
+            "pre": 0.43484917283058167,
+            "post": 0.5651508569717407
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4354347288608551,
+            "post": 0.5645652413368225
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.4345213770866394,
+            "post": 0.5654786229133606
+          },
+          "JALAN": {
+            "n_tokens": 26,
+            "pre": 0.4340466260910034,
+            "post": 0.5659533739089966
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.4329476058483124,
+            "post": 0.5670523643493652
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.4334907531738281,
+            "post": 0.5665092468261719
+          },
+          "PERTANIAN": {
+            "n_tokens": 12,
+            "pre": 0.4329463243484497,
+            "post": 0.5670537352561951
+          },
+          "KESIMPULAN": {
+            "n_tokens": 25,
+            "pre": 0.4330998957157135,
+            "post": 0.5669001936912537
+          },
+          "__ALL__": {
+            "n_tokens": 128,
+            "pre": 0.4335710108280182,
+            "post": 0.5664289593696594
+          }
+        }
+      },
+      "files": {
+        "original": "idx0471_tornado_original.png",
+        "rollout_sections": "idx0471_tornado_rollout.png",
+        "rollout_tokens": "idx0471_tornado_tokens.png",
+        "lastlayer_raw_sections": "idx0471_tornado_lastlayer_raw.png",
+        "caption": "idx0471_tornado_caption.txt"
+      }
+    },
+    {
+      "index": 514,
+      "tag": "idx0514_tornado",
+      "pre_image_path": "test_images\\joplin_tornado_00000123_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000123_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "bencana_correct": false,
+      "n_emitted_tokens": 166,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.00014627353812102228,
+        "rollout_vit": 0.19755038619041443,
+        "last_layer": 7.529880531365052e-05,
+        "mean_layers": 7.335891859838739e-05
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.3819708228111267,
+            "post": 0.6180291771888733
+          },
+          "BANGUNAN": {
+            "n_tokens": 21,
+            "pre": 0.3890780806541443,
+            "post": 0.6109219193458557
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.38831594586372375,
+            "post": 0.6116840243339539
+          },
+          "VEGETASI": {
+            "n_tokens": 34,
+            "pre": 0.384703129529953,
+            "post": 0.6152968406677246
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.3847328722476959,
+            "post": 0.6152670979499817
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.38372281193733215,
+            "post": 0.6162772178649902
+          },
+          "KESIMPULAN": {
+            "n_tokens": 38,
+            "pre": 0.3867279887199402,
+            "post": 0.6132720112800598
+          },
+          "__ALL__": {
+            "n_tokens": 145,
+            "pre": 0.38611122965812683,
+            "post": 0.6138887405395508
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.5274179577827454,
+            "post": 0.47258198261260986
+          },
+          "BANGUNAN": {
+            "n_tokens": 21,
+            "pre": 0.5274403691291809,
+            "post": 0.47255977988243103
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.5274530649185181,
+            "post": 0.4725469648838043
+          },
+          "VEGETASI": {
+            "n_tokens": 34,
+            "pre": 0.5274484753608704,
+            "post": 0.47255146503448486
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.5274497270584106,
+            "post": 0.47255030274391174
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.5274525284767151,
+            "post": 0.4725474715232849
+          },
+          "KESIMPULAN": {
+            "n_tokens": 38,
+            "pre": 0.5274608731269836,
+            "post": 0.4725390374660492
+          },
+          "__ALL__": {
+            "n_tokens": 145,
+            "pre": 0.5274514555931091,
+            "post": 0.47254854440689087
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.3806034326553345,
+            "post": 0.6193965673446655
+          },
+          "BANGUNAN": {
+            "n_tokens": 21,
+            "pre": 0.39526113867759705,
+            "post": 0.6047388911247253
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.39340898394584656,
+            "post": 0.606590986251831
+          },
+          "VEGETASI": {
+            "n_tokens": 34,
+            "pre": 0.3868790864944458,
+            "post": 0.6131209135055542
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.3865880072116852,
+            "post": 0.6134120225906372
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.3853437900543213,
+            "post": 0.6146562695503235
+          },
+          "KESIMPULAN": {
+            "n_tokens": 38,
+            "pre": 0.3904648721218109,
+            "post": 0.6095350980758667
+          },
+          "__ALL__": {
+            "n_tokens": 145,
+            "pre": 0.38944682478904724,
+            "post": 0.6105532050132751
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.38438525795936584,
+            "post": 0.6156148314476013
+          },
+          "BANGUNAN": {
+            "n_tokens": 21,
+            "pre": 0.38366830348968506,
+            "post": 0.6163316965103149
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.38245028257369995,
+            "post": 0.6175496578216553
+          },
+          "VEGETASI": {
+            "n_tokens": 34,
+            "pre": 0.3812926709651947,
+            "post": 0.6187072992324829
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.38157185912132263,
+            "post": 0.6184281706809998
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.3812352418899536,
+            "post": 0.6187647581100464
+          },
+          "KESIMPULAN": {
+            "n_tokens": 38,
+            "pre": 0.38169699907302856,
+            "post": 0.6183030009269714
+          },
+          "__ALL__": {
+            "n_tokens": 145,
+            "pre": 0.3819136321544647,
+            "post": 0.6180863380432129
+          }
+        }
+      },
+      "files": {
+        "original": "idx0514_tornado_original.png",
+        "rollout_sections": "idx0514_tornado_rollout.png",
+        "rollout_tokens": "idx0514_tornado_tokens.png",
+        "lastlayer_raw_sections": "idx0514_tornado_lastlayer_raw.png",
+        "caption": "idx0514_tornado_caption.txt"
+      }
+    },
+    {
+      "index": 563,
+      "tag": "idx0563_banjir",
+      "pre_image_path": "test_images\\libya_flood_pre_76.png",
+      "post_image_path": "test_images\\libya_flood_post_76.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "banjir",
+      "gen_bencana": "gempa bumi",
+      "bencana_correct": false,
+      "n_emitted_tokens": 136,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.0003425755712669343,
+        "rollout_vit": 0.15641365945339203,
+        "last_layer": 0.00013696213136427104,
+        "mean_layers": 0.00019389776571188122
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.9046023488044739,
+            "post": 0.09539757668972015
+          },
+          "BANGUNAN": {
+            "n_tokens": 10,
+            "pre": 0.9109894037246704,
+            "post": 0.08901064097881317
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.918024480342865,
+            "post": 0.0819755420088768
+          },
+          "VEGETASI": {
+            "n_tokens": 26,
+            "pre": 0.9273889064788818,
+            "post": 0.07261119782924652
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.9253029227256775,
+            "post": 0.07469712197780609
+          },
+          "PERTANIAN": {
+            "n_tokens": 15,
+            "pre": 0.9286364912986755,
+            "post": 0.07136347889900208
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.9282342195510864,
+            "post": 0.07176581025123596
+          },
+          "__ALL__": {
+            "n_tokens": 115,
+            "pre": 0.9241914749145508,
+            "post": 0.0758085697889328
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.5289267301559448,
+            "post": 0.4710732698440552
+          },
+          "BANGUNAN": {
+            "n_tokens": 10,
+            "pre": 0.5290693044662476,
+            "post": 0.47093072533607483
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.5291500091552734,
+            "post": 0.4708499312400818
+          },
+          "VEGETASI": {
+            "n_tokens": 26,
+            "pre": 0.5291650295257568,
+            "post": 0.4708349108695984
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.5291771292686462,
+            "post": 0.47082293033599854
+          },
+          "PERTANIAN": {
+            "n_tokens": 15,
+            "pre": 0.529182493686676,
+            "post": 0.470817506313324
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.5291935205459595,
+            "post": 0.4708064794540405
+          },
+          "__ALL__": {
+            "n_tokens": 115,
+            "pre": 0.5291610956192017,
+            "post": 0.4708389639854431
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.9294991493225098,
+            "post": 0.07050082087516785
+          },
+          "BANGUNAN": {
+            "n_tokens": 10,
+            "pre": 0.9300297498703003,
+            "post": 0.06997025012969971
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.9395570158958435,
+            "post": 0.06044293940067291
+          },
+          "VEGETASI": {
+            "n_tokens": 26,
+            "pre": 0.9510673880577087,
+            "post": 0.048932526260614395
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.9470720887184143,
+            "post": 0.052928000688552856
+          },
+          "PERTANIAN": {
+            "n_tokens": 15,
+            "pre": 0.9534221291542053,
+            "post": 0.046577852219343185
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.9501574635505676,
+            "post": 0.04984259232878685
+          },
+          "__ALL__": {
+            "n_tokens": 115,
+            "pre": 0.9466026425361633,
+            "post": 0.0533972792327404
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.9330426454544067,
+            "post": 0.06695747375488281
+          },
+          "BANGUNAN": {
+            "n_tokens": 10,
+            "pre": 0.9395817518234253,
+            "post": 0.060418255627155304
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.9503106474876404,
+            "post": 0.049689341336488724
+          },
+          "VEGETASI": {
+            "n_tokens": 26,
+            "pre": 0.9562888741493225,
+            "post": 0.04371112212538719
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.9518467783927917,
+            "post": 0.04815325140953064
+          },
+          "PERTANIAN": {
+            "n_tokens": 15,
+            "pre": 0.9568021297454834,
+            "post": 0.043197885155677795
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.955068826675415,
+            "post": 0.04493122920393944
+          },
+          "__ALL__": {
+            "n_tokens": 115,
+            "pre": 0.952605128288269,
+            "post": 0.047394756227731705
+          }
+        }
+      },
+      "files": {
+        "original": "idx0563_banjir_original.png",
+        "rollout_sections": "idx0563_banjir_rollout.png",
+        "rollout_tokens": "idx0563_banjir_tokens.png",
+        "lastlayer_raw_sections": "idx0563_banjir_lastlayer_raw.png",
+        "caption": "idx0563_banjir_caption.txt"
+      }
+    },
+    {
+      "index": 673,
+      "tag": "idx0673_gunung-berapi",
+      "pre_image_path": "test_images\\lower_puna_volcano_00000079_pre_disaster.png",
+      "post_image_path": "test_images\\lower_puna_volcano_00000079_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "gunung berapi",
+      "gen_bencana": "kebakaran hutan",
+      "bencana_correct": false,
+      "n_emitted_tokens": 162,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.00034165335819125175,
+        "rollout_vit": 0.14463074505329132,
+        "last_layer": 0.00018663180526345968,
+        "mean_layers": 0.0001733921526465565
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.30765125155448914,
+            "post": 0.692348837852478
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.30893048644065857,
+            "post": 0.6910695433616638
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.3064078390598297,
+            "post": 0.6935921311378479
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.3050275146961212,
+            "post": 0.694972574710846
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.30531275272369385,
+            "post": 0.6946873068809509
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.30362045764923096,
+            "post": 0.696379542350769
+          },
+          "KESIMPULAN": {
+            "n_tokens": 32,
+            "pre": 0.30523747205734253,
+            "post": 0.6947625279426575
+          },
+          "__ALL__": {
+            "n_tokens": 142,
+            "pre": 0.30573198199272156,
+            "post": 0.6942681074142456
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.46820926666259766,
+            "post": 0.5317907333374023
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.46818846464157104,
+            "post": 0.531811535358429
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.4681830406188965,
+            "post": 0.5318168997764587
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.4681921899318695,
+            "post": 0.5318078398704529
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.46818995475769043,
+            "post": 0.5318100452423096
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.46819058060646057,
+            "post": 0.5318094491958618
+          },
+          "KESIMPULAN": {
+            "n_tokens": 32,
+            "pre": 0.4681876599788666,
+            "post": 0.5318123698234558
+          },
+          "__ALL__": {
+            "n_tokens": 142,
+            "pre": 0.4681893587112427,
+            "post": 0.5318106412887573
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.2960943579673767,
+            "post": 0.7039056420326233
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.30243822932243347,
+            "post": 0.6975617408752441
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.30021604895591736,
+            "post": 0.699783980846405
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.29690301418304443,
+            "post": 0.7030969858169556
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.2981458604335785,
+            "post": 0.7018541693687439
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.29524892568588257,
+            "post": 0.7047510147094727
+          },
+          "KESIMPULAN": {
+            "n_tokens": 32,
+            "pre": 0.2991246283054352,
+            "post": 0.7008753418922424
+          },
+          "__ALL__": {
+            "n_tokens": 142,
+            "pre": 0.29856806993484497,
+            "post": 0.7014318704605103
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.3049513101577759,
+            "post": 0.6950486898422241
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.30100300908088684,
+            "post": 0.6989969611167908
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.297747939825058,
+            "post": 0.7022520899772644
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.2963639199733734,
+            "post": 0.703636109828949
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.2974313497543335,
+            "post": 0.7025686502456665
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.2950294017791748,
+            "post": 0.70497065782547
+          },
+          "KESIMPULAN": {
+            "n_tokens": 32,
+            "pre": 0.2957842946052551,
+            "post": 0.7042157649993896
+          },
+          "__ALL__": {
+            "n_tokens": 142,
+            "pre": 0.2972022593021393,
+            "post": 0.7027977705001831
+          }
+        }
+      },
+      "files": {
+        "original": "idx0673_gunung-berapi_original.png",
+        "rollout_sections": "idx0673_gunung-berapi_rollout.png",
+        "rollout_tokens": "idx0673_gunung-berapi_tokens.png",
+        "lastlayer_raw_sections": "idx0673_gunung-berapi_lastlayer_raw.png",
+        "caption": "idx0673_gunung-berapi_caption.txt"
+      }
+    },
+    {
+      "index": 1234,
+      "tag": "idx1234_tsunami",
+      "pre_image_path": "test_images\\palu_tsunami_00000011_pre_disaster.png",
+      "post_image_path": "test_images\\palu_tsunami_00000011_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "tsunami",
+      "gen_bencana": "tsunami",
+      "bencana_correct": true,
+      "n_emitted_tokens": 156,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.00020042876712977886,
+        "rollout_vit": 0.17503878474235535,
+        "last_layer": 9.167294047074392e-05,
+        "mean_layers": 0.00010098173515871167
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4586242437362671,
+            "post": 0.5413756370544434
+          },
+          "BANGUNAN": {
+            "n_tokens": 23,
+            "pre": 0.4603910446166992,
+            "post": 0.5396090149879456
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.4608215093612671,
+            "post": 0.5391784310340881
+          },
+          "VEGETASI": {
+            "n_tokens": 31,
+            "pre": 0.4588228762149811,
+            "post": 0.5411771535873413
+          },
+          "BADAN_AIR": {
+            "n_tokens": 15,
+            "pre": 0.4584859311580658,
+            "post": 0.5415141582489014
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.4586588144302368,
+            "post": 0.541341245174408
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.45815178751945496,
+            "post": 0.5418482422828674
+          },
+          "__ALL__": {
+            "n_tokens": 136,
+            "pre": 0.45912835001945496,
+            "post": 0.5408716797828674
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4756012260913849,
+            "post": 0.5243987441062927
+          },
+          "BANGUNAN": {
+            "n_tokens": 23,
+            "pre": 0.47558340430259705,
+            "post": 0.5244166254997253
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.47557780146598816,
+            "post": 0.5244222283363342
+          },
+          "VEGETASI": {
+            "n_tokens": 31,
+            "pre": 0.47558167576789856,
+            "post": 0.5244183540344238
+          },
+          "BADAN_AIR": {
+            "n_tokens": 15,
+            "pre": 0.4755776524543762,
+            "post": 0.5244223475456238
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.4755779504776001,
+            "post": 0.5244220495223999
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.4755786657333374,
+            "post": 0.5244213342666626
+          },
+          "__ALL__": {
+            "n_tokens": 136,
+            "pre": 0.47558003664016724,
+            "post": 0.5244200229644775
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.45638507604599,
+            "post": 0.54361492395401
+          },
+          "BANGUNAN": {
+            "n_tokens": 23,
+            "pre": 0.46035054326057434,
+            "post": 0.5396494269371033
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.46153005957603455,
+            "post": 0.5384699106216431
+          },
+          "VEGETASI": {
+            "n_tokens": 31,
+            "pre": 0.4580194652080536,
+            "post": 0.5419805645942688
+          },
+          "BADAN_AIR": {
+            "n_tokens": 15,
+            "pre": 0.45730113983154297,
+            "post": 0.5426988005638123
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.457853764295578,
+            "post": 0.5421462059020996
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.4568130671977997,
+            "post": 0.5431869626045227
+          },
+          "__ALL__": {
+            "n_tokens": 136,
+            "pre": 0.45847201347351074,
+            "post": 0.5415279865264893
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.45654043555259705,
+            "post": 0.5434595346450806
+          },
+          "BANGUNAN": {
+            "n_tokens": 23,
+            "pre": 0.4563634991645813,
+            "post": 0.5436365008354187
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.45603883266448975,
+            "post": 0.5439611077308655
+          },
+          "VEGETASI": {
+            "n_tokens": 31,
+            "pre": 0.4551541209220886,
+            "post": 0.5448459386825562
+          },
+          "BADAN_AIR": {
+            "n_tokens": 15,
+            "pre": 0.455451637506485,
+            "post": 0.5445483326911926
+          },
+          "PERTANIAN": {
+            "n_tokens": 19,
+            "pre": 0.4553479552268982,
+            "post": 0.5446521043777466
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.455240935087204,
+            "post": 0.5447589755058289
+          },
+          "__ALL__": {
+            "n_tokens": 136,
+            "pre": 0.45555850863456726,
+            "post": 0.5444415211677551
+          }
+        }
+      },
+      "files": {
+        "original": "idx1234_tsunami_original.png",
+        "rollout_sections": "idx1234_tsunami_rollout.png",
+        "rollout_tokens": "idx1234_tsunami_tokens.png",
+        "lastlayer_raw_sections": "idx1234_tsunami_lastlayer_raw.png",
+        "caption": "idx1234_tsunami_caption.txt"
+      }
+    },
+    {
+      "index": 1482,
+      "tag": "idx1482_kebakaran-hutan",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000061_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000061_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "kebakaran hutan",
+      "gen_bencana": "api liar",
+      "bencana_correct": false,
+      "n_emitted_tokens": 156,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.0002361582883168012,
+        "rollout_vit": 0.19416530430316925,
+        "last_layer": 0.00012645855895243585,
+        "mean_layers": 0.00010630760516505688
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.4457249045372009,
+            "post": 0.5542751550674438
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.4490116238594055,
+            "post": 0.5509882569313049
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.4499031901359558,
+            "post": 0.550096869468689
+          },
+          "VEGETASI": {
+            "n_tokens": 29,
+            "pre": 0.44561102986335754,
+            "post": 0.5543888807296753
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.4456652104854584,
+            "post": 0.554334819316864
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.4444887638092041,
+            "post": 0.5555112361907959
+          },
+          "KESIMPULAN": {
+            "n_tokens": 34,
+            "pre": 0.4463818371295929,
+            "post": 0.5536181330680847
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.4466418921947479,
+            "post": 0.5533581376075745
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.5069602727890015,
+            "post": 0.49303972721099854
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.5069708824157715,
+            "post": 0.49302902817726135
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.5069751143455505,
+            "post": 0.49302494525909424
+          },
+          "VEGETASI": {
+            "n_tokens": 29,
+            "pre": 0.5069688558578491,
+            "post": 0.4930311143398285
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.5069696307182312,
+            "post": 0.4930303394794464
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.5069689154624939,
+            "post": 0.4930311143398285
+          },
+          "KESIMPULAN": {
+            "n_tokens": 34,
+            "pre": 0.5069718360900879,
+            "post": 0.4930281937122345
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.5069705843925476,
+            "post": 0.49302938580513
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.4406377077102661,
+            "post": 0.5593622922897339
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.44980162382125854,
+            "post": 0.5501983761787415
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.4513924717903137,
+            "post": 0.5486075282096863
+          },
+          "VEGETASI": {
+            "n_tokens": 29,
+            "pre": 0.4440765678882599,
+            "post": 0.5559234619140625
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.443897545337677,
+            "post": 0.556102454662323
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.4427168369293213,
+            "post": 0.5572831630706787
+          },
+          "KESIMPULAN": {
+            "n_tokens": 34,
+            "pre": 0.44613534212112427,
+            "post": 0.5538646578788757
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.4459899365901947,
+            "post": 0.5540100932121277
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.44263285398483276,
+            "post": 0.5573670864105225
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.44113996624946594,
+            "post": 0.5588600635528564
+          },
+          "JALAN": {
+            "n_tokens": 17,
+            "pre": 0.4396519958972931,
+            "post": 0.5603480339050293
+          },
+          "VEGETASI": {
+            "n_tokens": 29,
+            "pre": 0.4375515282154083,
+            "post": 0.5624485015869141
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.43814343214035034,
+            "post": 0.5618565678596497
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.4374125003814697,
+            "post": 0.5625874996185303
+          },
+          "KESIMPULAN": {
+            "n_tokens": 34,
+            "pre": 0.4378895163536072,
+            "post": 0.562110424041748
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.43849411606788635,
+            "post": 0.561505913734436
+          }
+        }
+      },
+      "files": {
+        "original": "idx1482_kebakaran-hutan_original.png",
+        "rollout_sections": "idx1482_kebakaran-hutan_rollout.png",
+        "rollout_tokens": "idx1482_kebakaran-hutan_tokens.png",
+        "lastlayer_raw_sections": "idx1482_kebakaran-hutan_lastlayer_raw.png",
+        "caption": "idx1482_kebakaran-hutan_caption.txt"
+      }
+    },
+    {
+      "index": 1514,
+      "tag": "idx1514_api-liar",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000263_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000263_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "api liar",
+      "gen_bencana": "kebakaran hutan",
+      "bencana_correct": false,
+      "n_emitted_tokens": 156,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.000283253553789109,
+        "rollout_vit": 0.15827850997447968,
+        "last_layer": 0.00015200648340396583,
+        "mean_layers": 0.00015479940338991582
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.49149179458618164,
+            "post": 0.5085083246231079
+          },
+          "BANGUNAN": {
+            "n_tokens": 15,
+            "pre": 0.49200713634490967,
+            "post": 0.5079928636550903
+          },
+          "JALAN": {
+            "n_tokens": 14,
+            "pre": 0.4918513894081116,
+            "post": 0.5081486105918884
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.4909801483154297,
+            "post": 0.5090198516845703
+          },
+          "BADAN_AIR": {
+            "n_tokens": 17,
+            "pre": 0.4914715588092804,
+            "post": 0.5085283517837524
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.4910755455493927,
+            "post": 0.5089244842529297
+          },
+          "KESIMPULAN": {
+            "n_tokens": 36,
+            "pre": 0.4916323125362396,
+            "post": 0.508367657661438
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.49143925309181213,
+            "post": 0.5085607171058655
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.5020435452461243,
+            "post": 0.49795645475387573
+          },
+          "BANGUNAN": {
+            "n_tokens": 15,
+            "pre": 0.502042829990387,
+            "post": 0.49795717000961304
+          },
+          "JALAN": {
+            "n_tokens": 14,
+            "pre": 0.5020418167114258,
+            "post": 0.49795815348625183
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.5020438432693481,
+            "post": 0.49795612692832947
+          },
+          "BADAN_AIR": {
+            "n_tokens": 17,
+            "pre": 0.5020411014556885,
+            "post": 0.4979588985443115
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.5020434856414795,
+            "post": 0.4979565739631653
+          },
+          "KESIMPULAN": {
+            "n_tokens": 36,
+            "pre": 0.5020430088043213,
+            "post": 0.4979569613933563
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.5020428895950317,
+            "post": 0.49795714020729065
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.4934834837913513,
+            "post": 0.5065166354179382
+          },
+          "BANGUNAN": {
+            "n_tokens": 15,
+            "pre": 0.49416935443878174,
+            "post": 0.5058306455612183
+          },
+          "JALAN": {
+            "n_tokens": 14,
+            "pre": 0.49385616183280945,
+            "post": 0.5061438679695129
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.49230194091796875,
+            "post": 0.5076980590820312
+          },
+          "BADAN_AIR": {
+            "n_tokens": 17,
+            "pre": 0.4931475818157196,
+            "post": 0.5068525075912476
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.49255067110061646,
+            "post": 0.5074493288993835
+          },
+          "KESIMPULAN": {
+            "n_tokens": 36,
+            "pre": 0.4933259189128876,
+            "post": 0.50667405128479
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.4930971562862396,
+            "post": 0.5069029331207275
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.4934561848640442,
+            "post": 0.5065438747406006
+          },
+          "BANGUNAN": {
+            "n_tokens": 15,
+            "pre": 0.4933893084526062,
+            "post": 0.5066106915473938
+          },
+          "JALAN": {
+            "n_tokens": 14,
+            "pre": 0.4929267466068268,
+            "post": 0.5070732831954956
+          },
+          "VEGETASI": {
+            "n_tokens": 35,
+            "pre": 0.49241718649864197,
+            "post": 0.5075827836990356
+          },
+          "BADAN_AIR": {
+            "n_tokens": 17,
+            "pre": 0.49268263578414917,
+            "post": 0.5073173642158508
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.492437481880188,
+            "post": 0.5075626373291016
+          },
+          "KESIMPULAN": {
+            "n_tokens": 36,
+            "pre": 0.4924144148826599,
+            "post": 0.5075855851173401
+          },
+          "__ALL__": {
+            "n_tokens": 135,
+            "pre": 0.4926284849643707,
+            "post": 0.5073715448379517
+          }
+        }
+      },
+      "files": {
+        "original": "idx1514_api-liar_original.png",
+        "rollout_sections": "idx1514_api-liar_rollout.png",
+        "rollout_tokens": "idx1514_api-liar_tokens.png",
+        "lastlayer_raw_sections": "idx1514_api-liar_lastlayer_raw.png",
+        "caption": "idx1514_api-liar_caption.txt"
+      }
+    },
+    {
+      "index": 1944,
+      "tag": "idx1944_gempa-bumi",
+      "pre_image_path": "test_images\\turkey_earthquake5_pre_348.png",
+      "post_image_path": "test_images\\turkey_earthquake5_sar_post_348.png",
+      "post_image_type": "SAR",
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "gempa bumi",
+      "bencana_correct": true,
+      "n_emitted_tokens": 147,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.0002445659483782947,
+        "rollout_vit": 0.16103436052799225,
+        "last_layer": 0.00011629235814325511,
+        "mean_layers": 0.00011102097050752491
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.1266157329082489,
+            "post": 0.8733842372894287
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.11332102119922638,
+            "post": 0.8866790533065796
+          },
+          "JALAN": {
+            "n_tokens": 18,
+            "pre": 0.10834676027297974,
+            "post": 0.891653299331665
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.10363028198480606,
+            "post": 0.8963697552680969
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.10526794195175171,
+            "post": 0.8947321176528931
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.10329955816268921,
+            "post": 0.8967004418373108
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.10366107523441315,
+            "post": 0.8963388800621033
+          },
+          "__ALL__": {
+            "n_tokens": 127,
+            "pre": 0.10654648393392563,
+            "post": 0.8934535384178162
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.48635703325271606,
+            "post": 0.5136430859565735
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.4860680401325226,
+            "post": 0.5139319896697998
+          },
+          "JALAN": {
+            "n_tokens": 18,
+            "pre": 0.4859890341758728,
+            "post": 0.5140109658241272
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.48598670959472656,
+            "post": 0.5140132308006287
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.48598694801330566,
+            "post": 0.5140130519866943
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.4859755337238312,
+            "post": 0.5140243768692017
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.4859686493873596,
+            "post": 0.5140313506126404
+          },
+          "__ALL__": {
+            "n_tokens": 127,
+            "pre": 0.4860018193721771,
+            "post": 0.5139982104301453
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.09407998621463776,
+            "post": 0.9059200286865234
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.08478694409132004,
+            "post": 0.9152130484580994
+          },
+          "JALAN": {
+            "n_tokens": 18,
+            "pre": 0.080671526491642,
+            "post": 0.9193284511566162
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.07275674492120743,
+            "post": 0.927243173122406
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.07587120682001114,
+            "post": 0.9241287708282471
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.0721859261393547,
+            "post": 0.9278141260147095
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.07468099892139435,
+            "post": 0.9253190159797668
+          },
+          "__ALL__": {
+            "n_tokens": 127,
+            "pre": 0.07708176970481873,
+            "post": 0.9229182004928589
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.10013039410114288,
+            "post": 0.8998696208000183
+          },
+          "BANGUNAN": {
+            "n_tokens": 22,
+            "pre": 0.08399839699268341,
+            "post": 0.916001558303833
+          },
+          "JALAN": {
+            "n_tokens": 18,
+            "pre": 0.07912996411323547,
+            "post": 0.9208700656890869
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.07513409852981567,
+            "post": 0.9248659014701843
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.0795251801609993,
+            "post": 0.9204748272895813
+          },
+          "PERTANIAN": {
+            "n_tokens": 17,
+            "pre": 0.0755387395620346,
+            "post": 0.9244612455368042
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.07640495151281357,
+            "post": 0.9235950708389282
+          },
+          "__ALL__": {
+            "n_tokens": 127,
+            "pre": 0.07860090583562851,
+            "post": 0.9213991165161133
+          }
+        }
+      },
+      "files": {
+        "original": "idx1944_gempa-bumi_original.png",
+        "rollout_sections": "idx1944_gempa-bumi_rollout.png",
+        "rollout_tokens": "idx1944_gempa-bumi_tokens.png",
+        "lastlayer_raw_sections": "idx1944_gempa-bumi_lastlayer_raw.png",
+        "caption": "idx1944_gempa-bumi_caption.txt"
+      }
+    },
+    {
+      "index": 2028,
+      "tag": "idx2028_gempa-bumi",
+      "pre_image_path": "test_images\\turkey_earthquake6_pre_415.png",
+      "post_image_path": "test_images\\turkey_earthquake6_post_415.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "gempa bumi",
+      "bencana_correct": true,
+      "n_emitted_tokens": 141,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.00026089645689353347,
+        "rollout_vit": 0.19088450074195862,
+        "last_layer": 0.00010914131416939199,
+        "mean_layers": 0.00010972650488838553
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.38030028343200684,
+            "post": 0.6196997165679932
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.38064050674438477,
+            "post": 0.6193594932556152
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.3812159597873688,
+            "post": 0.6187841296195984
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.374083012342453,
+            "post": 0.6259169578552246
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.3755670487880707,
+            "post": 0.6244329214096069
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.3743799328804016,
+            "post": 0.6256200671195984
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.3744927644729614,
+            "post": 0.6255072355270386
+          },
+          "__ALL__": {
+            "n_tokens": 120,
+            "pre": 0.3763755261898041,
+            "post": 0.6236244440078735
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.5063320398330688,
+            "post": 0.49366796016693115
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.5063555240631104,
+            "post": 0.49364447593688965
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.5063623189926147,
+            "post": 0.49363765120506287
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.506355881690979,
+            "post": 0.49364399909973145
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.5063593983650208,
+            "post": 0.493640661239624
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.5063584446907043,
+            "post": 0.49364152550697327
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.5063599944114685,
+            "post": 0.4936399459838867
+          },
+          "__ALL__": {
+            "n_tokens": 120,
+            "pre": 0.5063580870628357,
+            "post": 0.4936418831348419
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.3776494860649109,
+            "post": 0.6223505735397339
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.38177406787872314,
+            "post": 0.6182259321212769
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.3829708397388458,
+            "post": 0.6170291304588318
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.3716348707675934,
+            "post": 0.628365159034729
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.373313307762146,
+            "post": 0.6266868114471436
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.3727177381515503,
+            "post": 0.6272822618484497
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.3728061020374298,
+            "post": 0.6271938681602478
+          },
+          "__ALL__": {
+            "n_tokens": 120,
+            "pre": 0.37527045607566833,
+            "post": 0.6247295141220093
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 2,
+            "pre": 0.36915093660354614,
+            "post": 0.6308490037918091
+          },
+          "BANGUNAN": {
+            "n_tokens": 17,
+            "pre": 0.369202584028244,
+            "post": 0.6307973265647888
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.36599698662757874,
+            "post": 0.6340029835700989
+          },
+          "VEGETASI": {
+            "n_tokens": 23,
+            "pre": 0.3629908263683319,
+            "post": 0.6370091438293457
+          },
+          "BADAN_AIR": {
+            "n_tokens": 19,
+            "pre": 0.3648853600025177,
+            "post": 0.6351146101951599
+          },
+          "PERTANIAN": {
+            "n_tokens": 18,
+            "pre": 0.36367642879486084,
+            "post": 0.6363236308097839
+          },
+          "KESIMPULAN": {
+            "n_tokens": 26,
+            "pre": 0.3643437922000885,
+            "post": 0.6356562376022339
+          },
+          "__ALL__": {
+            "n_tokens": 120,
+            "pre": 0.3650452196598053,
+            "post": 0.6349547505378723
+          }
+        }
+      },
+      "files": {
+        "original": "idx2028_gempa-bumi_original.png",
+        "rollout_sections": "idx2028_gempa-bumi_rollout.png",
+        "rollout_tokens": "idx2028_gempa-bumi_tokens.png",
+        "lastlayer_raw_sections": "idx2028_gempa-bumi_lastlayer_raw.png",
+        "caption": "idx2028_gempa-bumi_caption.txt"
+      }
+    },
+    {
+      "index": 2344,
+      "tag": "idx2344_api",
+      "pre_image_path": "test_images\\woolsey_fire_00000598_pre_disaster.png",
+      "post_image_path": "test_images\\woolsey_fire_00000598_post_disaster.png",
+      "post_image_type": "Optical",
+      "gt_bencana": "api",
+      "gen_bencana": "badai",
+      "bencana_correct": false,
+      "n_emitted_tokens": 135,
+      "teacher_forced_argmax_match_vs_greedy": 1.0,
+      "teacher_forced_mismatched_tokens": 0,
+      "cls_mass": {
+        "rollout": 0.00021593338169623166,
+        "rollout_vit": 0.18099896609783173,
+        "last_layer": 0.00010198268137173727,
+        "mean_layers": 0.00010492765431990847
+      },
+      "section_pre_post": {
+        "rollout": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.43972960114479065,
+            "post": 0.560270369052887
+          },
+          "BANGUNAN": {
+            "n_tokens": 18,
+            "pre": 0.4446481168270111,
+            "post": 0.5553519129753113
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.4458892047405243,
+            "post": 0.5541107654571533
+          },
+          "VEGETASI": {
+            "n_tokens": 14,
+            "pre": 0.43934792280197144,
+            "post": 0.560651957988739
+          },
+          "BADAN_AIR": {
+            "n_tokens": 20,
+            "pre": 0.44093838334083557,
+            "post": 0.5590616464614868
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.4385473132133484,
+            "post": 0.5614526867866516
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.44134145975112915,
+            "post": 0.5586585402488708
+          },
+          "__ALL__": {
+            "n_tokens": 114,
+            "pre": 0.44174009561538696,
+            "post": 0.5582598447799683
+          }
+        },
+        "rollout_vit": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.5553348064422607,
+            "post": 0.4446651041507721
+          },
+          "BANGUNAN": {
+            "n_tokens": 18,
+            "pre": 0.5553868412971497,
+            "post": 0.44461312890052795
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.5554055571556091,
+            "post": 0.44459444284439087
+          },
+          "VEGETASI": {
+            "n_tokens": 14,
+            "pre": 0.5554007887840271,
+            "post": 0.4445991814136505
+          },
+          "BADAN_AIR": {
+            "n_tokens": 20,
+            "pre": 0.5553989410400391,
+            "post": 0.44460105895996094
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.5554027557373047,
+            "post": 0.4445972740650177
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.5554164052009583,
+            "post": 0.444583535194397
+          },
+          "__ALL__": {
+            "n_tokens": 114,
+            "pre": 0.5554026365280151,
+            "post": 0.4445972740650177
+          }
+        },
+        "last_layer": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.4375457167625427,
+            "post": 0.5624542832374573
+          },
+          "BANGUNAN": {
+            "n_tokens": 18,
+            "pre": 0.44834116101264954,
+            "post": 0.5516588687896729
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.4516197144985199,
+            "post": 0.5483802556991577
+          },
+          "VEGETASI": {
+            "n_tokens": 14,
+            "pre": 0.43974247574806213,
+            "post": 0.5602575540542603
+          },
+          "BADAN_AIR": {
+            "n_tokens": 20,
+            "pre": 0.4421396851539612,
+            "post": 0.557860255241394
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.43928414583206177,
+            "post": 0.5607157945632935
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.44540461897850037,
+            "post": 0.5545953512191772
+          },
+          "__ALL__": {
+            "n_tokens": 114,
+            "pre": 0.444489985704422,
+            "post": 0.5555099844932556
+          }
+        },
+        "mean_layers": {
+          "BENCANA": {
+            "n_tokens": 1,
+            "pre": 0.44136255979537964,
+            "post": 0.5586373209953308
+          },
+          "BANGUNAN": {
+            "n_tokens": 18,
+            "pre": 0.43994802236557007,
+            "post": 0.5600519776344299
+          },
+          "JALAN": {
+            "n_tokens": 15,
+            "pre": 0.438580185174942,
+            "post": 0.5614197254180908
+          },
+          "VEGETASI": {
+            "n_tokens": 14,
+            "pre": 0.4351626932621002,
+            "post": 0.5648372769355774
+          },
+          "BADAN_AIR": {
+            "n_tokens": 20,
+            "pre": 0.43724244832992554,
+            "post": 0.5627576112747192
+          },
+          "PERTANIAN": {
+            "n_tokens": 16,
+            "pre": 0.436046838760376,
+            "post": 0.5639532208442688
+          },
+          "KESIMPULAN": {
+            "n_tokens": 30,
+            "pre": 0.4348132908344269,
+            "post": 0.5651866793632507
+          },
+          "__ALL__": {
+            "n_tokens": 114,
+            "pre": 0.43681931495666504,
+            "post": 0.563180685043335
+          }
+        }
+      },
+      "files": {
+        "original": "idx2344_api_original.png",
+        "rollout_sections": "idx2344_api_rollout.png",
+        "rollout_tokens": "idx2344_api_tokens.png",
+        "lastlayer_raw_sections": "idx2344_api_lastlayer_raw.png",
+        "caption": "idx2344_api_caption.txt"
+      }
+    }
+  ]
+}

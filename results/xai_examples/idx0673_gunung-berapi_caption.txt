@@ -1,0 +1,23 @@
+# test index 673
+# pre : test_images\lower_puna_volcano_00000079_pre_disaster.png
+# post: test_images\lower_puna_volcano_00000079_post_disaster.png (Optical)
+# ground-truth BENCANA: gunung berapi
+# generated BENCANA  : kebakaran hutan
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: kebakaran hutan
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; struktur tetap utuh dan tidak berubah antara gambar sebelum dan sesudah bencana. JALAN: tidak ada gangguan, pemblokiran, atau perubahan yang terlihat di jaringan jalan.
+VEGETASI: vegetasi di daerah yang tidak dikelola, termasuk padang rumput dan penutup tanaman yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: bidang pertanian di bagian bawah gambar menunjukkan perubahan refleksi spektral yang konsisten dengan kerusakan kebakaran.
+KESIMPULAN: kebakaran hutan terutama mempengaruhi vegetasi alam, dengan bukti yang jelas terbakar dan hilangnya vegetasi yang signifikan. infrastruktur yang dibangun, jaringan jalan, dan daerah pertanian tetap tidak terpengaruh.
+
+=== GROUND TRUTH ===
+BENCANA: gunung berapi
+BANGUNAN: Tidak ada bukti kerusakan bangunan yang diamati. Struktur yang terlihat di daerah kiri atas dan tengah tetap utuh dengan karakteristik refleksi spektral yang tidak berubah.
+JALAN: Segmen jalan yang terlihat di bagian atas kiri tetap berkelanjutan dan tidak terganggu, tanpa pemblokiran atau perubahan refleksi permukaan.
+VEGETASI: Vegetasi di daerah yang tidak dikelola, termasuk patch di tengah dan bawah gambar, menunjukkan tanda tangan spektrum yang konsisten di kedua gambar, menunjukkan tidak ada kerugian, pembakaran, atau gangguan.
+BADAN_AIR: Tidak ada benda air yang hadir dalam gambar sebelum bencana atau pasca bencana.
+PERTANIAN: Bidang pertanian yang dikelola yang menampilkan pola lurus yang berbeda di pusat gambar tetap konsisten secara visual, tanpa tanda banjir, hilangnya tanaman, atau gangguan pola ladang.
+KESIMPULAN: Analisis komparatif ini tidak menunjukkan dampak yang dapat diamati dari peristiwa gunung berapi pada bangunan, jalan, vegetasi, benda air, atau daerah pertanian dalam wilayah yang dianalisis.

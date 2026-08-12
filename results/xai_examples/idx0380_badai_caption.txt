@@ -1,0 +1,24 @@
+# test index 380
+# pre : test_images\hurricane_michael_00000441_pre_disaster.png
+# post: test_images\hurricane_michael_00000441_post_disaster.png (Optical)
+# ground-truth BENCANA: badai
+# generated BENCANA  : badai
+# BENCANA correct: True
+
+=== GENERATED CAPTION ===
+BENCANA: badai
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; atap dan tata letak tetap konsisten antara gambar sebelum dan sesudah bencana.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran, kehancuran, atau banjir yang terlihat.
+VEGETASI: vegetasi di daerah alam, termasuk penutup tanaman yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: tidak ada lahan pertanian yang dikelola yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: badai itu tidak menyebabkan kerusakan yang terlihat pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: badai
+BANGUNAN: Semua struktur tampak utuh tanpa tanda-tanda kerusakan atap, runtuh, atau tumpukan puing-puing.
+JALAN: Jaringan jalan tetap tidak terhalang dengan tidak ada puing-puing yang terlihat, banjir, atau gangguan struktural.
+VEGETASI: Vegetasi menunjukkan gangguan yang meluas, terutama terlihat sebagai penurunan kepadatan kanopi dan refleksi spektral di daerah yang mencakup bagian atas tengah dan tengah kanan gambar pasca bencana. Ini menunjukkan kemungkinan defoliasi atau kerusakan pada penutup pohon yang konsisten dengan efek kekuatan badai.
+BADAN_AIR: Tidak ada perubahan yang terlihat pada benda-benda air yang terlihat dalam gambar; ukuran, bentuk, dan karakteristik refleksi mereka tetap konsisten dalam pandangan sebelum dan sesudah bencana.
+PERTANIAN: Tidak ada bukti lapangan pertanian atau perubahan yang terkait dengan lahan yang dikelola manusia yang dapat diamati dalam gambar.
+KESIMPULAN: Dampak yang dominan dari badai diamati pada vegetasi alami, dengan defoliasi yang terlihat atau hilangnya kanopi. Lingkungan yang dibangun dan dikelola, termasuk bangunan, jalan, benda air, dan daerah pertanian, tetap tidak terpengaruh.

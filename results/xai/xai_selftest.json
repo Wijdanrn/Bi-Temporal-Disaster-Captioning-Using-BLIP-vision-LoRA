@@ -1,0 +1,254 @@
+{
+  "checkpoint": "C:\\Users\\Wijdan\\Documents\\GEMASTIK\\Data Mining\\checkpoints\\full_run_v3_vision\\best",
+  "transformers_version": "5.9.0",
+  "torch_version": "2.9.0.dev20250831+cu128",
+  "attn_implementation": "eager",
+  "text_decoder_layers": 12,
+  "text_decoder_heads": 12,
+  "vision_layers": 12,
+  "vision_heads": 12,
+  "vision_image_size": 384,
+  "vision_patch_size": 16,
+  "toplevel_output_attentions": {
+    "cross_attentions_is_none": true,
+    "attentions_shape": [
+      1,
+      12,
+      577,
+      577
+    ],
+    "attentions_is_vision_self_attention": true
+  },
+  "explain_seconds_per_example": 7.65,
+  "example_a": {
+    "index": 0,
+    "n_emitted_tokens": 146,
+    "teacher_forced_argmax_match_vs_greedy": 1.0,
+    "teacher_forced_mismatched_tokens": 0,
+    "cls_mass": {
+      "rollout": 0.00023773577413521707,
+      "rollout_vit": 0.19704413414001465,
+      "last_layer": 8.108131441986188e-05,
+      "mean_layers": 9.398828115081415e-05
+    }
+  },
+  "non_uniformity": {
+    "rollout": {
+      "mean_entropy_nats": 3.691807985305786,
+      "uniform_entropy_nats": 6.3561076606958915,
+      "max_over_uniform_ratio": 37.98533630371094
+    },
+    "rollout_vit": {
+      "mean_entropy_nats": 6.329183101654053,
+      "uniform_entropy_nats": 6.3561076606958915,
+      "max_over_uniform_ratio": 1.8861480951309204
+    },
+    "last_layer": {
+      "mean_entropy_nats": 3.42409086227417,
+      "uniform_entropy_nats": 6.3561076606958915,
+      "max_over_uniform_ratio": 40.07566833496094
+    },
+    "mean_layers": {
+      "mean_entropy_nats": 3.3650591373443604,
+      "uniform_entropy_nats": 6.3561076606958915,
+      "max_over_uniform_ratio": 40.53430938720703
+    }
+  },
+  "image_sensitivity_same_tokens_different_image": {
+    "rollout": {
+      "mean_L1_distance_per_token": 1.7775201797485352,
+      "pearson_r": 0.02273826281600278
+    },
+    "rollout_vit": {
+      "mean_L1_distance_per_token": 0.21518293023109436,
+      "pearson_r": 0.2612976193344139
+    },
+    "last_layer": {
+      "mean_L1_distance_per_token": 1.8513846397399902,
+      "pearson_r": 0.02257630153716774
+    },
+    "mean_layers": {
+      "mean_L1_distance_per_token": 1.8532812595367432,
+      "pearson_r": 0.02229635697842128
+    }
+  },
+  "token_selectivity": {
+    "rollout": 0.999667227268219,
+    "rollout_vit": 1.0,
+    "last_layer": 0.9989591836929321,
+    "mean_layers": 0.9998358488082886
+  },
+  "token_selectivity_per_layer_per_head_raw_cross_attention": {
+    "layer_0": {
+      "head_avg": 0.9990237951278687,
+      "min_over_heads": 0.9009554386138916,
+      "argmin_head": 6,
+      "max_over_heads": 0.999182939529419
+    },
+    "layer_1": {
+      "head_avg": 0.9994337558746338,
+      "min_over_heads": 0.9910764098167419,
+      "argmin_head": 0,
+      "max_over_heads": 0.9994732141494751
+    },
+    "layer_2": {
+      "head_avg": 0.9993728995323181,
+      "min_over_heads": 0.9773717522621155,
+      "argmin_head": 8,
+      "max_over_heads": 0.9991717338562012
+    },
+    "layer_3": {
+      "head_avg": 0.9989433884620667,
+      "min_over_heads": 0.9910851716995239,
+      "argmin_head": 0,
+      "max_over_heads": 0.9991200566291809
+    },
+    "layer_4": {
+      "head_avg": 0.9995796084403992,
+      "min_over_heads": 0.9770985841751099,
+      "argmin_head": 11,
+      "max_over_heads": 0.9991090297698975
+    },
+    "layer_5": {
+      "head_avg": 0.9997341632843018,
+      "min_over_heads": 0.9949683547019958,
+      "argmin_head": 1,
+      "max_over_heads": 0.9995104074478149
+    },
+    "layer_6": {
+      "head_avg": 0.9994495511054993,
+      "min_over_heads": 0.9635196924209595,
+      "argmin_head": 2,
+      "max_over_heads": 0.9995912313461304
+    },
+    "layer_7": {
+      "head_avg": 0.999496340751648,
+      "min_over_heads": 0.9895750284194946,
+      "argmin_head": 5,
+      "max_over_heads": 0.9993237257003784
+    },
+    "layer_8": {
+      "head_avg": 0.9991608262062073,
+      "min_over_heads": 0.9928442239761353,
+      "argmin_head": 1,
+      "max_over_heads": 0.9994354248046875
+    },
+    "layer_9": {
+      "head_avg": 0.9993270039558411,
+      "min_over_heads": 0.9956588745117188,
+      "argmin_head": 3,
+      "max_over_heads": 0.9993513226509094
+    },
+    "layer_10": {
+      "head_avg": 0.9995396733283997,
+      "min_over_heads": 0.9750364422798157,
+      "argmin_head": 2,
+      "max_over_heads": 0.9997045993804932
+    },
+    "layer_11": {
+      "head_avg": 0.9989591836929321,
+      "min_over_heads": 0.956930935382843,
+      "argmin_head": 10,
+      "max_over_heads": 0.9996118545532227
+    }
+  },
+  "token_selectivity_note": "mean pairwise Pearson r between per-token patch maps within one example; 1.0 => every generated word gets an identical heatmap",
+  "variant_agreement": {
+    "rollout_vs_rollout_vit": {
+      "mean_per_token_pearson_r": 0.11674379310745144,
+      "mean_L1_per_token": 1.6498725414276123
+    },
+    "rollout_vs_last_layer": {
+      "mean_per_token_pearson_r": 0.999825006240923,
+      "mean_L1_per_token": 0.09653019160032272
+    },
+    "rollout_vs_mean_layers": {
+      "mean_per_token_pearson_r": 0.9997772307465465,
+      "mean_L1_per_token": 0.12527824938297272
+    }
+  },
+  "example_a_sections": {
+    "BENCANA": {
+      "n_tokens": 1,
+      "pre": 0.4949882924556732,
+      "post": 0.5050116777420044
+    },
+    "BANGUNAN": {
+      "n_tokens": 23,
+      "pre": 0.49644431471824646,
+      "post": 0.5035556554794312
+    },
+    "JALAN": {
+      "n_tokens": 15,
+      "pre": 0.4986664354801178,
+      "post": 0.5013335943222046
+    },
+    "VEGETASI": {
+      "n_tokens": 26,
+      "pre": 0.500901460647583,
+      "post": 0.4990985691547394
+    },
+    "BADAN_AIR": {
+      "n_tokens": 19,
+      "pre": 0.4989832937717438,
+      "post": 0.5010167360305786
+    },
+    "PERTANIAN": {
+      "n_tokens": 17,
+      "pre": 0.5011361837387085,
+      "post": 0.4988637864589691
+    },
+    "KESIMPULAN": {
+      "n_tokens": 25,
+      "pre": 0.5002041459083557,
+      "post": 0.4997958242893219
+    },
+    "__ALL__": {
+      "n_tokens": 126,
+      "pre": 0.49937891960144043,
+      "post": 0.5006210803985596
+    }
+  },
+  "example_a_sections_rollout_vit": {
+    "BENCANA": {
+      "n_tokens": 1,
+      "pre": 0.5064447522163391,
+      "post": 0.4935552179813385
+    },
+    "BANGUNAN": {
+      "n_tokens": 23,
+      "pre": 0.5064439177513123,
+      "post": 0.49355611205101013
+    },
+    "JALAN": {
+      "n_tokens": 15,
+      "pre": 0.5064507126808167,
+      "post": 0.49354928731918335
+    },
+    "VEGETASI": {
+      "n_tokens": 26,
+      "pre": 0.5064630508422852,
+      "post": 0.49353694915771484
+    },
+    "BADAN_AIR": {
+      "n_tokens": 19,
+      "pre": 0.5064556002616882,
+      "post": 0.4935443699359894
+    },
+    "PERTANIAN": {
+      "n_tokens": 17,
+      "pre": 0.5064637064933777,
+      "post": 0.4935362637042999
+    },
+    "KESIMPULAN": {
+      "n_tokens": 25,
+      "pre": 0.5064612030982971,
+      "post": 0.49353888630867004
+    },
+    "__ALL__": {
+      "n_tokens": 126,
+      "pre": 0.5064566135406494,
+      "post": 0.49354344606399536
+    }
+  }
+}

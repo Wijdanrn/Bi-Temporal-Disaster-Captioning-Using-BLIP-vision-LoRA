@@ -1,0 +1,15 @@
+{
+  "run_name": "full_run_v1",
+  "total_wall_clock_s": 4989.5,
+  "total_wall_clock_h": 1.386,
+  "global_step": 4370,
+  "best_val_loss": 1.7631578768293064,
+  "peak_gpu_mem_mb": 3620.8,
+  "gpu": {
+    "available": true,
+    "name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+    "total_memory_mb": 8150.6,
+    "capability": "12.0",
+    "multi_processor_count": 20
+  }
+}

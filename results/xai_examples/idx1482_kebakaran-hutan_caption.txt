@@ -1,0 +1,24 @@
+# test index 1482
+# pre : test_images\santa_rosa_wildfire_00000061_pre_disaster.png
+# post: test_images\santa_rosa_wildfire_00000061_post_disaster.png (Optical)
+# ground-truth BENCANA: kebakaran hutan
+# generated BENCANA  : api liar
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: api liar
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; semua struktur tetap utuh dan tidak terpengaruh.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran yang terlihat, gangguan permukaan, atau perubahan permukaan.
+VEGETASI: vegetasi di daerah yang tidak dikelola, termasuk padang rumput dan penutup tanaman yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau pembakaran.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: tidak ada daerah pertanian yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: kebakaran hutan terutama mempengaruhi vegetasi alam, dengan hilangnya vegetasi yang signifikan terlihat di daerah yang tidak dikelola, sementara bangunan, jalan, badan air, dan daerah pertanian tetap tidak terpengaruh.
+
+=== GROUND TRUTH ===
+BENCANA: kebakaran hutan
+BANGUNAN: Tidak ada kerusakan struktural yang terlihat pada bangunan; integritas ruang dan karakteristik refleksi atap tetap konsisten antara gambar sebelum dan sesudah bencana.
+JALAN: Jaringan jalan tampak utuh tanpa pemblokiran yang terlihat, perubahan permukaan, atau gangguan dalam konektivitas.
+VEGETASI: Vegetasi di daerah yang tidak dikelola, terutama di bagian atas dan kiri gambar, menunjukkan perubahan refleksi yang terlihat yang menunjukkan pembakaran atau hilangnya vegetasi.
+BADAN_AIR: Tidak ada perubahan yang terlihat pada benda air; tidak ada yang hadir di area yang diamati berdasarkan perbandingan gambar.
+PERTANIAN: Tidak ada bidang pertanian yang dapat diidentifikasi dalam ruang lingkup gambar yang dianalisis, dan tidak ada dampak yang diamati.
+KESIMPULAN: Kebakaran hutan menyebabkan hilangnya vegetasi yang signifikan di daerah alam tanpa berdampak pada struktur yang dibangun, jaringan jalan, badan air, atau lahan pertanian. Kerusakan terbatas pada zona vegetatif yang tidak terkendali.

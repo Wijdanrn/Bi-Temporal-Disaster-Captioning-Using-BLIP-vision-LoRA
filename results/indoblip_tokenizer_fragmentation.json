@@ -1,0 +1,17 @@
+{
+  "n_reports_sampled": 300,
+  "total_words": 45065,
+  "indoblip_tokenizer": {
+    "name": "Salesforce/blip-image-captioning-base",
+    "vocab_size": 30522,
+    "total_tokens": 119058,
+    "tokens_per_word": 2.6419172306668144
+  },
+  "our_tokenizer": {
+    "name": "indolem/indobert-base-uncased (adapted)",
+    "vocab_size": 31923,
+    "total_tokens": 54318,
+    "tokens_per_word": 1.2053256407411517
+  },
+  "fragmentation_multiplier": 2.1918700983099524
+}

@@ -1,0 +1,217 @@
+{
+  "READ_THIS_FIRST": "These heatmaps are NOT validated as faithful token-level explanations. The numbers below are the evidence. See docs/design_decisions.md section 6.",
+  "plumbing": {
+    "attn_implementation": "eager",
+    "eager_was_required": false,
+    "toplevel_output_attentions_returns_cross_attentions": false,
+    "teacher_forced_token_alignment_match": 1.0
+  },
+  "token_selectivity_mean_pairwise_map_correlation": {
+    "rollout": 0.999667227268219,
+    "rollout_vit": 1.0,
+    "last_layer": 0.9989591836929321,
+    "mean_layers": 0.9998358488082886
+  },
+  "deletion_insertion": {
+    "n_examples": 12,
+    "n_generations": 792,
+    "example_indices": [
+      81,
+      380,
+      471,
+      514,
+      563,
+      673,
+      1234,
+      1482,
+      1514,
+      1944,
+      2028,
+      2344
+    ],
+    "batched_generation_control_identical_rate": 1.0,
+    "token_f1_auc": {
+      "rollout_deletion": 0.7578938974528473,
+      "last_layer_deletion": 0.7515075928949541,
+      "random_deletion": 0.7697877704470256,
+      "rollout_insertion": 0.7810760194402677,
+      "last_layer_insertion": 0.7861500741395976,
+      "random_insertion": 0.7773582756745944
+    },
+    "paired_bootstrap_vs_random": {
+      "rollout_deletion": {
+        "observed_mean_diff": -0.011893872994178314,
+        "ci95_low": -0.0326380536096453,
+        "ci95_high": 0.009163693954922062,
+        "frac_bootstrap_resamples_favoring_ours": 0.1347,
+        "two_sided_p_value_approx": 0.2694,
+        "n_bootstrap": 10000,
+        "n_paired_examples": 12
+      },
+      "rollout_insertion": {
+        "observed_mean_diff": 0.0037177437656732335,
+        "ci95_low": -0.01270288032520975,
+        "ci95_high": 0.02045233364304699,
+        "frac_bootstrap_resamples_favoring_ours": 0.6656,
+        "two_sided_p_value_approx": 0.6688,
+        "n_bootstrap": 10000,
+        "n_paired_examples": 12
+      },
+      "last_layer_deletion": {
+        "observed_mean_diff": -0.018280177552071647,
+        "ci95_low": -0.03434925647356854,
+        "ci95_high": -0.0014999191702214799,
+        "frac_bootstrap_resamples_favoring_ours": 0.0178,
+        "two_sided_p_value_approx": 0.0356,
+        "n_bootstrap": 10000,
+        "n_paired_examples": 12
+      },
+      "last_layer_insertion": {
+        "observed_mean_diff": 0.008791798465003295,
+        "ci95_low": -0.01638554341895816,
+        "ci95_high": 0.027815327492811074,
+        "frac_bootstrap_resamples_favoring_ours": 0.7842,
+        "two_sided_p_value_approx": 0.4316,
+        "n_bootstrap": 10000,
+        "n_paired_examples": 12
+      }
+    }
+  },
+  "half_occlusion": {
+    "post_masked": {
+      "n": 60,
+      "caption_identical_rate": 0.016666666666666666,
+      "mean_token_f1_vs_intact": 0.8110774946463047,
+      "bencana_changed_rate": 0.23333333333333334,
+      "no_damage_flipped_rate": 0.06666666666666667,
+      "section_changed_rate": {
+        "BENCANA": 0.23333333333333334,
+        "BANGUNAN": 0.7,
+        "JALAN": 0.7166666666666667,
+        "VEGETASI": 0.8333333333333334,
+        "BADAN_AIR": 0.55,
+        "PERTANIAN": 0.7666666666666667,
+        "KESIMPULAN": 0.8666666666666667
+      }
+    },
+    "pre_masked": {
+      "n": 60,
+      "caption_identical_rate": 0.0,
+      "mean_token_f1_vs_intact": 0.7983682182423537,
+      "bencana_changed_rate": 0.25,
+      "no_damage_flipped_rate": 0.11666666666666667,
+      "section_changed_rate": {
+        "BENCANA": 0.25,
+        "BANGUNAN": 0.7,
+        "JALAN": 0.6833333333333333,
+        "VEGETASI": 0.8333333333333334,
+        "BADAN_AIR": 0.55,
+        "PERTANIAN": 0.8,
+        "KESIMPULAN": 0.8166666666666667
+      }
+    },
+    "post_minus_pre": {
+      "bencana_changed_rate": -0.016666666666666663,
+      "mean_token_f1": 0.01270927640395103,
+      "interpretation": "negative token_f1 difference == masking the POST half damages the output MORE than masking the PRE half, which is what a model that actually reads damage off the post image should show"
+    }
+  },
+  "section_pre_post_attention": {
+    "n_examples": 150,
+    "overall_post_fraction_mean": 0.5424533800284068,
+    "overall_post_fraction_ci95": [
+      0.514406969944636,
+      0.569798914834857
+    ],
+    "frac_bootstrap_above_0.50": 0.9987,
+    "rollout": {
+      "BENCANA": {
+        "n_examples": 150,
+        "total_tokens": 215,
+        "pre_mean": 0.4577121269206206,
+        "post_mean": 0.5422878706951936,
+        "pre_std": 0.165836841462402,
+        "post_minus_pre_mean": 0.08457574377457301,
+        "frac_examples_post_dominant": 0.6066666666666667,
+        "post_mean_token_weighted": 0.5493103626509045
+      },
+      "BANGUNAN": {
+        "n_examples": 150,
+        "total_tokens": 3041,
+        "pre_mean": 0.45804587518175444,
+        "post_mean": 0.5419541267553966,
+        "pre_std": 0.1665681596311185,
+        "post_minus_pre_mean": 0.0839082515736421,
+        "frac_examples_post_dominant": 0.6,
+        "post_mean_token_weighted": 0.5451828205945146
+      },
+      "JALAN": {
+        "n_examples": 150,
+        "total_tokens": 2478,
+        "pre_mean": 0.45806069657206533,
+        "post_mean": 0.5419392944375674,
+        "pre_std": 0.16829171941142382,
+        "post_minus_pre_mean": 0.08387859786550204,
+        "frac_examples_post_dominant": 0.6,
+        "post_mean_token_weighted": 0.5377931693979239
+      },
+      "VEGETASI": {
+        "n_examples": 150,
+        "total_tokens": 4212,
+        "pre_mean": 0.4574088545143604,
+        "post_mean": 0.5425911448399225,
+        "pre_std": 0.17168544607911185,
+        "post_minus_pre_mean": 0.08518229032556215,
+        "frac_examples_post_dominant": 0.5933333333333334,
+        "post_mean_token_weighted": 0.5403596739614593
+      },
+      "BADAN_AIR": {
+        "n_examples": 150,
+        "total_tokens": 2756,
+        "pre_mean": 0.4572356430441141,
+        "post_mean": 0.5427643585205079,
+        "pre_std": 0.17088949273285764,
+        "post_minus_pre_mean": 0.0855287154763937,
+        "frac_examples_post_dominant": 0.6,
+        "post_mean_token_weighted": 0.5462352480463608
+      },
+      "PERTANIAN": {
+        "n_examples": 150,
+        "total_tokens": 2614,
+        "pre_mean": 0.45732239286104837,
+        "post_mean": 0.5426776105662187,
+        "pre_std": 0.17235880906095521,
+        "post_minus_pre_mean": 0.08535521770517031,
+        "frac_examples_post_dominant": 0.5933333333333334,
+        "post_mean_token_weighted": 0.5411358756749294
+      },
+      "KESIMPULAN": {
+        "n_examples": 150,
+        "total_tokens": 4556,
+        "pre_mean": 0.45727952462931476,
+        "post_mean": 0.5427204749981562,
+        "pre_std": 0.1719228255739776,
+        "post_minus_pre_mean": 0.08544095036884149,
+        "frac_examples_post_dominant": 0.5933333333333334,
+        "post_mean_token_weighted": 0.5380715113705559
+      },
+      "__ALL__": {
+        "n_examples": 150,
+        "total_tokens": 19872,
+        "pre_mean": 0.4575466189533472,
+        "post_mean": 0.5424533800284068,
+        "pre_std": 0.17042680526986662,
+        "post_minus_pre_mean": 0.08490676107505957,
+        "frac_examples_post_dominant": 0.6,
+        "post_mean_token_weighted": 0.5412669309336938
+      },
+      "_diagnostics": {
+        "mean_token_selectivity": 0.9996703453858693,
+        "min_token_selectivity": 0.9994426369667053,
+        "mean_between_section_post_std": 0.002679732164153612,
+        "between_example_post_std": 0.17042680582495104,
+        "between_example_over_between_section": 63.59844767500486
+      }
+    }
+  }
+}

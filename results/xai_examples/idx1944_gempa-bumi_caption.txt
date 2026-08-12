@@ -1,0 +1,23 @@
+# test index 1944
+# pre : test_images\turkey_earthquake5_pre_348.png
+# post: test_images\turkey_earthquake5_sar_post_348.png (SAR)
+# ground-truth BENCANA: gempa bumi
+# generated BENCANA  : gempa bumi
+# BENCANA correct: True
+
+=== GENERATED CAPTION ===
+BENCANA: gempa bumi
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; atap dan tata letak tetap konsisten antara gambar sebelum dan sesudah bencana. JALAN: tidak ada gangguan, pemblokiran, atau deformasi permukaan yang terlihat di jaringan jalan.
+VEGETASI: tidak ada perubahan yang terlihat pada lapisan vegetasi alami; pola refleksi spektral tetap konsisten antara gambar sebelum dan sesudah bencana.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: tidak ada lahan pertanian yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: gempa bumi tidak menyebabkan kerusakan yang terlihat pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: gempa bumi
+BANGUNAN: Semua bangunan yang dapat diamati tampak utuh tanpa kerusakan struktural yang terlihat, runtuh, atau puing-puing yang ada di daerah yang dianalisis.
+JALAN: Jaringan jalan tetap tidak berubah tanpa gangguan yang terlihat, pemblokiran, atau deformasi permukaan dalam gambar yang dinilai.
+VEGETASI: Vegetasi seperti pohon dan cakupan lahan yang tidak dikelola tidak menunjukkan kehilangan atau perubahan yang terlihat dalam luas ruang atau tanda tangan spektrum.
+BADAN_AIR: Tidak ada perubahan yang dapat diamati dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar pasca bencana jika dibandingkan dengan gambar sebelum bencana.
+PERTANIAN: Tidak ada kehadiran lahan pertanian atau ladang yang terlihat di daerah yang dianalisis.
+KESIMPULAN: Wilayah yang dianalisis tidak menunjukkan dampak yang terlihat dari gempa bumi, dengan semua bangunan, alam, dan fitur pertanian tetap tidak terpengaruh berdasarkan penilaian gambar.

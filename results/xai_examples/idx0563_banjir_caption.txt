@@ -1,0 +1,24 @@
+# test index 563
+# pre : test_images\libya_flood_pre_76.png
+# post: test_images\libya_flood_post_76.png (Optical)
+# ground-truth BENCANA: banjir
+# generated BENCANA  : gempa bumi
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: gempa bumi
+BANGUNAN: tidak ada bangunan yang terlihat di daerah yang dianalisis.
+JALAN: tidak ada jaringan jalan yang terlihat dalam gambar sebelum: tidak ada perubahan yang dapat diamati.
+VEGETASI: tidak ada perubahan yang terlihat pada lapisan vegetasi alami; refleksi spektral dan penutup tanaman alami tetap konsisten antara gambar sebelum dan sesudah bencana.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang diamati dalam gambar.
+PERTANIAN: tidak ada lahan pertanian yang dikelola yang terlihat dalam gambar sebelum atau sesudah bencana.
+KESIMPULAN: gempa bumi tidak menyebabkan kerusakan yang terlihat pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: banjir
+BANGUNAN: Tidak ada kerusakan bangunan yang terlihat dalam gambar pasca bencana. Struktur di kanan atas tetap utuh, tidak menunjukkan tanda-tanda kompromi struktural atau banjir.
+JALAN: Gambar pasca bencana tidak menunjukkan dampak yang terlihat pada jaringan jalan. Tidak ada pemblokiran, erosi, atau gangguan yang disebabkan oleh air yang terlihat di daerah dekat struktur di sebelah kanan atas.
+VEGETASI: Tidak ada perubahan yang terlihat pada vegetasi alam. Penutup vegetatif di bagian tengah dan bawah gambar tampaknya konsisten dalam luas dan refleksi sebelum dan sesudah bencana.
+BADAN_AIR: Tidak ada benda air yang dapat diidentifikasi dalam kedua gambar. Tidak ada perubahan seperti ekspansi, kontraksi, atau kolam air baru terlihat di seluruh area yang menarik.
+PERTANIAN: Tidak ada lahan pertanian yang hadir dalam gambar sebelum atau sesudah bencana. Daerah tidak menunjukkan pola lahan buatan manusia atau kerusakan tanaman.
+KESIMPULAN: Analisis pasca bencana menunjukkan tidak ada dampak yang terlihat dari peristiwa banjir pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.

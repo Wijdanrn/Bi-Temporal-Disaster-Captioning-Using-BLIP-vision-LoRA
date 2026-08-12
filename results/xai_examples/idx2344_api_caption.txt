@@ -1,0 +1,24 @@
+# test index 2344
+# pre : test_images\woolsey_fire_00000598_pre_disaster.png
+# post: test_images\woolsey_fire_00000598_post_disaster.png (Optical)
+# ground-truth BENCANA: api
+# generated BENCANA  : badai
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: badai
+BANGUNAN: kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran, kehancuran, atau banjir yang terlihat.
+VEGETASI: kehilangan vegetasi yang signifikan terlihat, terutama di bagian tengah dan bawah gambar.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terlihat di seluruh gambar.
+PERTANIAN: tidak ada daerah pertanian yang terlihat dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: badai menyebabkan kerusakan struktural yang signifikan pada bangunan dan hilangnya vegetasi yang signifikan, terutama di daerah yang terkena dampak. jaringan jalan dan benda air tetap tidak terpengaruh.
+
+=== GROUND TRUTH ===
+BENCANA: api
+BANGUNAN: Tidak ada kerusakan struktural yang terlihat di lingkungan yang dibangun. Bangunan tampak utuh, tanpa tanda-tanda kerusakan atau perubahan warna akibat kebakaran.
+JALAN: Jaringan jalan tetap tidak terhalang dan secara struktural utuh, tanpa tanda-tanda kerusakan akibat kebakaran atau puing-puing terkait yang terlihat.
+VEGETASI: Kehilangan vegetasi yang signifikan terlihat di daerah alam yang tidak terkendali, terutama di bagian tengah gambar. Perubahan spektrum pasca bencana menunjukkan pembakaran yang luas, seperti yang ditunjukkan oleh penurunan lapisan vegetasi dan kehadiran daerah yang gelap dan terkena kebakaran.
+BADAN_AIR: Tidak ada benda air yang terlihat di daerah itu, dan tidak ada perubahan yang dapat dinilai.
+PERTANIAN: Tidak ada ladang pertanian yang diamati dalam kedua gambar, dan oleh karena itu, tidak ada dampak yang dicatat.
+KESIMPULAN: Kejadian kebakaran ini terutama telah berdampak pada vegetasi alami, menyebabkan kerusakan lingkungan yang signifikan seperti yang ditunjukkan oleh pembakaran yang luas dan hilangnya penutup tanaman yang tidak terkendali. Infrastruktur sekitarnya, termasuk bangunan dan jaringan jalan, tetap tidak terpengaruh.

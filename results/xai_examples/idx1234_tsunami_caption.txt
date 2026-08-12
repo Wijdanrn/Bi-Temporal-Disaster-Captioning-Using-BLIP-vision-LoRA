@@ -1,0 +1,23 @@
+# test index 1234
+# pre : test_images\palu_tsunami_00000011_pre_disaster.png
+# post: test_images\palu_tsunami_00000011_post_disaster.png (Optical)
+# ground-truth BENCANA: tsunami
+# generated BENCANA  : tsunami
+# BENCANA correct: True
+
+=== GENERATED CAPTION ===
+BENCANA: tsunami
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; semua struktur tetap utuh dan tidak berubah antara gambar sebelum dan sesudah bencana. JALAN: jaringan jalan tetap utuh tanpa pemblokiran yang terlihat, gangguan, atau banjir yang diamati.
+VEGETASI: penutup vegetasi, termasuk daerah hutan dan penutup tanaman yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air.
+PERTANIAN: tidak ada lahan pertanian yang dikelola yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: analisis komparatif tidak mengungkapkan dampak yang terlihat dari tsunami pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: Tsunami
+BANGUNAN: Bangunan tetap secara struktural utuh tanpa dampak yang terlihat atau kerusakan yang diamati di seluruh wilayah dalam gambar.
+JALAN: Jaringan jalan tampaknya tidak berubah, tanpa pemblokiran, kehancuran, atau banjir terlihat dalam gambar pasca bencana.
+VEGETASI: Vegetasi di daerah yang tidak dikelola seperti bintik-bintik hijau yang terlihat di dekat pusat dan bagian kanan gambar tidak menunjukkan tanda-tanda kehilangan, pembakaran, atau banjir. Pola refleksi spektral konsisten antara gambar sebelum dan pasca bencana.
+BADAN_AIR: Tubuh air di tepi kiri gambar mempertahankan ukurannya, bentuknya, dan batasnya tanpa dampak atau perubahan yang terlihat.
+PERTANIAN: Wilayah pertanian dengan pola lapangan yang berbeda (terlihat di dekat bagian tengah dan bawah) tidak menunjukkan tanda-tanda banjir, modifikasi, atau hilangnya tanaman.
+KESIMPULAN: Analisis komparatif menunjukkan tidak ada dampak signifikan dari tsunami pada bangunan, jaringan jalan, vegetasi, benda air, atau pertanian di wilayah yang dinilai dalam gambar. Wilayah ini tampaknya tidak terpengaruh oleh efek bencana yang terlihat.

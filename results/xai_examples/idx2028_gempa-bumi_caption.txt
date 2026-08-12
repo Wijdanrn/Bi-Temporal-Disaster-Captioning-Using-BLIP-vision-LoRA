@@ -1,0 +1,24 @@
+# test index 2028
+# pre : test_images\turkey_earthquake6_pre_415.png
+# post: test_images\turkey_earthquake6_post_415.png (Optical)
+# ground-truth BENCANA: gempa bumi
+# generated BENCANA  : gempa bumi
+# BENCANA correct: True
+
+=== GENERATED CAPTION ===
+BENCANA: gempa bumi
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; semua struktur tetap utuh dan tidak terpengaruh.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran, gangguan, atau perubahan yang terlihat.
+VEGETASI: tidak ada perubahan yang terlihat pada lapisan vegetasi alami; refleksi spektral dan penutup tanaman alami tetap konsisten di kedua gambar.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang diamati dalam gambar.
+PERTANIAN: tidak ada lahan pertanian yang dikelola yang terlihat dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: gempa bumi tidak menyebabkan kerusakan yang terlihat pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: gempa bumi
+BANGUNAN: Kerusakan atap dan puing-puing permukaan terlihat di beberapa struktur yang terkonsentrasi di dekat pusat gambar. Bangunan tetap utuh secara struktural dengan hanya dampak lokal yang mengurangi keadaan fungsional mereka.
+JALAN: Jaringan jalan yang terlihat dalam gambar sebelum bencana tetap utuh tanpa pemblokiran, kehancuran, atau gangguan permukaan yang terlihat.
+VEGETASI: Pola vegetasi di dekat bagian atas dan kanan gambar tetap konsisten dalam tanda tangan spektrum dan distribusi spasial, tanpa kerusakan atau kerugian yang dapat diamati.
+BADAN_AIR: Saluran yang melintasi sisi kiri gambar tidak menampilkan perubahan dalam ukuran, bentuk, atau kontinuitas aliran antara gambar sebelum dan sesudah bencana.
+PERTANIAN: Bidang pertanian yang menempati bagian bawah gambar, yang dapat diidentifikasi dengan pola lapangan yang teratur, tidak menunjukkan tanda-tanda banjir, hilangnya tanaman, atau gangguan ruang.
+KESIMPULAN: Kerusakan bangunan yang disebabkan oleh gempa bumi diamati, terutama terbatas pada dampak atap dan permukaan tanpa runtuhnya struktural. Semua elemen lingkungan dan infrastruktur lainnya tetap tidak rusak, menunjukkan efek bencana sekunder minimal di luar lingkungan yang dibangun.

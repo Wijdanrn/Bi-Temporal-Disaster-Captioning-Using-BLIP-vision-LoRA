@@ -1,0 +1,24 @@
+# test index 514
+# pre : test_images\joplin_tornado_00000123_pre_disaster.png
+# post: test_images\joplin_tornado_00000123_post_disaster.png (Optical)
+# ground-truth BENCANA: tornado
+# generated BENCANA  : badai
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: badai
+BANGUNAN: bangunan di daerah yang diamati tampak secara struktural utuh tanpa kerusakan struktural yang terlihat atau puing-puing yang terlihat.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran, kehancuran, atau banjir yang terlihat.
+VEGETASI: vegetasi di daerah yang tidak dikelola, termasuk penutup pohon dan daerah yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: tidak ada daerah pertanian yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: badai itu menyebabkan kerusakan yang signifikan pada bangunan dan hilangnya vegetasi yang signifikan, terutama di daerah yang dianalisis. fitur lain, termasuk jaringan jalan, benda air, dan daerah pertanian, tetap tidak terpengaruh.
+
+=== GROUND TRUTH ===
+BENCANA: tornado
+BANGUNAN: Gambar pasca bencana menunjukkan kerusakan luas bangunan di seluruh daerah jika dibandingkan dengan gambar sebelum bencana. Sebagian besar struktur di wilayah pusat dan bawah tampaknya hancur sepenuhnya, dengan puing-puing terlihat. Oleh karena itu, dampak struktural yang signifikan terlihat di seluruh lingkungan yang dibangun.
+JALAN: Gambar pasca bencana menunjukkan puing-puing yang meluas yang menghalangi jaringan jalan, terutama di daerah tengah dan bawah di mana jalur jalan sulit dibedakan. Hal ini menunjukkan gangguan jaringan jalan yang signifikan yang disebabkan oleh tornado.
+VEGETASI: Gambar pasca bencana mengungkapkan hilangnya vegetasi yang cukup besar di daerah yang tertutup rumput dan semak yang sebelumnya terlihat dalam gambar sebelum bencana, terutama di sepanjang bagian tengah dan kanan.
+BADAN_AIR: Tidak ada perubahan yang terlihat pada benda air yang diamati. Jumlah fitur air yang terbatas tetap konsisten dalam ukuran dan lokasi antara gambar sebelum dan pasca bencana.
+PERTANIAN: Tidak ada daerah pertanian, seperti lahan pertanian atau kebun buah, yang dapat diidentifikasi baik dalam gambar sebelum atau sesudah bencana.
+KESIMPULAN: Tornado telah menyebabkan kerusakan bangunan yang parah, gangguan jaringan jalan yang signifikan yang disebabkan oleh puing-puing, dan hilangnya vegetasi yang luar biasa. Tidak ada dampak yang terlihat pada benda air atau daerah pertanian di wilayah yang dinilai.

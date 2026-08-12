@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "val_fraction_of_groups": 0.1,
+  "n_train_records": 6999,
+  "n_val_records": 767,
+  "n_test_records": 2363,
+  "n_train_groups": 6377,
+  "n_val_groups": 708
+}

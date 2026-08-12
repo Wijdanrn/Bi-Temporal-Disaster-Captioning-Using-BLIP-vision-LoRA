@@ -1,0 +1,26 @@
+[
+  {
+    "name": "tornado_456",
+    "index": 456,
+    "pre": "demo/examples/tornado_456_pre.png",
+    "post": "demo/examples/tornado_456_post.png",
+    "post_image_type": "Optical",
+    "ground_truth_id": "BENCANA: tornado\nBANGUNAN: Tidak ada perubahan struktural yang terlihat pada bangunan atau fasilitas antara gambar sebelum dan sesudah bencana.\nJALAN: Jaringan jalan tetap utuh, tanpa pemblokiran, kerusakan, atau gangguan yang terlihat.\nVEGETASI: Penutup vegetasi tampak konsisten, tanpa hilangnya jelas, berakar, atau perubahan dalam refleksi spektral yang menunjukkan kerusakan pada penutup tanaman alami.\nBADAN_AIR: Tidak ada benda air yang dapat diidentifikasi atau perubahan dalam kehadiran, ukuran, atau bentuk air terlihat dalam gambar.\nPERTANIAN: Tidak ada lahan pertanian yang terlihat, pola, atau lahan pertanian yang dikelola baik dalam gambar sebelum atau sesudah bencana."
+  },
+  {
+    "name": "gempabumi_1126",
+    "index": 1126,
+    "pre": "demo/examples/gempabumi_1126_pre.png",
+    "post": "demo/examples/gempabumi_1126_post.png",
+    "post_image_type": "SAR",
+    "ground_truth_id": "BENCANA: Gempa bumi\nBANGUNAN: Tidak ada bangunan yang terlihat di kedua gambar.\nJALAN: Struktur jetty yang terlihat di kedua gambar tetap utuh dan tidak menunjukkan tanda-tanda kerusakan fisik atau penghalang.\nVEGETASI: Tidak ada tumbuh-tumbuhan alami yang terlihat di gambar-gambar ini.\nBADAN_AIR: Badan air mempertahankan batas yang konsisten dan pola refleksi spektral antara gambar sebelum dan sesudah bencana, yang menunjukkan tidak ada perubahan yang signifikan.\nPERTANIAN: Tidak ada ladang pertanian atau lahan yang dikelola yang hadir dalam gambar.\nKESIMPULAN: Gempa bumi tampaknya memiliki dampak terlihat kecil pada lingkungan yang dibangun dan alam di daerah berdasarkan perbandingan gambar yang diberikan."
+  },
+  {
+    "name": "banjir_571",
+    "index": 571,
+    "pre": "demo/examples/banjir_571_pre.png",
+    "post": "demo/examples/banjir_571_post.png",
+    "post_image_type": "SAR",
+    "ground_truth_id": "BENCANA: banjir\nBANGUNAN: Gambar-gambar menunjukkan degradasi yang terlihat dari infrastruktur yang dibangun, terutama di bagian atas pusat dan bagian bawah.\nJALAN: Beberapa segmen jalan, terutama di daerah pusat atas, menunjukkan liputan sebagian dengan sedimen dan air berdiri. Beberapa jalur tetap utuh tetapi tidak terlihat, yang menunjukkan hilangnya fungsi sementara.\nVEGETASI: Tidak ada perubahan signifikan yang diamati pada lapisan vegetatif, dengan vegetasi alami mempertahankan karakteristik spasial dan spektral yang konsisten.\nBADAN_AIR: Tidak ada perubahan pada benda air yang terdeteksi; tidak ada ekspansi, pergeseran, atau formasi baru yang terlihat dalam gambar.\nPERTANIAN: Zona bawah kanan, yang sebelumnya menampilkan pola pertanian yang jelas, menunjukkan tanda-tanda banjir air.\nKESIMPULAN: Kejadian banjir menyebabkan kerusakan besar pada infrastruktur yang dibangun dan jaringan jalan raya, dengan banjir pertanian yang signifikan di wilayah bawah. Tanaman dan benda air tetap tidak terpengaruh oleh bencana tersebut."
+  }
+]

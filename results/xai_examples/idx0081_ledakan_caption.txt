@@ -1,0 +1,24 @@
+# test index 81
+# pre : test_images\beriut_explosion_pre_42.png
+# post: test_images\beriut_explosion_post_42.png (Optical)
+# ground-truth BENCANA: ledakan
+# generated BENCANA  : ledakan
+# BENCANA correct: True
+
+=== GENERATED CAPTION ===
+BENCANA: ledakan
+BANGUNAN: tidak ada kerusakan struktural yang terlihat atau perubahan pada bangunan.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran yang terlihat atau kerusakan permukaan.
+VEGETASI: tidak ada perubahan yang terlihat pada lapisan vegetasi alami.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: tidak ada lahan pertanian yang dikelola yang terlihat dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: ledakan tidak menyebabkan kerusakan yang terlihat pada bangunan, jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: Ledakan
+BANGUNAN: Perbandingan visual struktur bangunan antara gambar sebelum dan sesudah bencana tidak mengungkapkan kerusakan yang terlihat. Bangunan tetap utuh dengan pola spasial yang tidak terganggu.
+JALAN: Jaringan jalan tetap tidak terganggu tanpa pemblokiran yang terlihat atau gangguan struktural dalam gambar pasca bencana.
+VEGETASI: Penutup vegetasi di daerah yang tidak dikelola tidak menunjukkan perubahan yang terlihat dalam kepadatan, refleksi, atau distribusi antara gambar sebelum dan pasca bencana.
+BADAN_AIR: Tidak ada perubahan yang terlihat dalam kehadiran, bentuk, atau ukuran benda air antara gambar sebelum dan sesudah bencana.
+PERTANIAN: Bidang pertanian, yang dapat diidentifikasi melalui pola yang dikelola, tidak menunjukkan perubahan yang jelas dalam kesehatan vegetasi, banjir, atau struktur.
+KESIMPULAN: Tidak ada kerusakan yang dapat diamati atau perubahan lingkungan akibat ledakan di daerah yang dianalisis. Lingkungan yang dibangun dan alam tetap tidak terpengaruh berdasarkan evaluasi visual dari gambar penginderaan jarak jauh.

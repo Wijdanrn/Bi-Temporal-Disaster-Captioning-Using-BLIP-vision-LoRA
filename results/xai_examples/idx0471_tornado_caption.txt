@@ -1,0 +1,20 @@
+# test index 471
+# pre : test_images\joplin_tornado_00000080_pre_disaster.png
+# post: test_images\joplin_tornado_00000080_post_disaster.png (Optical)
+# ground-truth BENCANA: tornado
+# generated BENCANA  : badai
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: badai
+BANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; atap dan tata letak tetap konsisten antara gambar sebelum dan sesudah bencana.
+
+JALAN: tidak ada gangguan, pemblokiran, atau kerusakan yang terlihat di jaringan jalan. jalan tetap utuh dan tidak terhalang dalam gambar pasca bencana.
+VEGETASI: tidak ada perubahan yang terlihat pada lapisan vegetasi alami; refleksi spektral dan penutup tanaman alami tetap konsisten di kedua gambar.
+BADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.
+PERTANIAN: tidak ada lahan pertanian yang dapat diidentifikasi dalam gambar yang dianalisis.
+KESIMPULAN: tidak ada dampak yang terlihat dari badai pada bangunan, jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis.
+
+=== GROUND TRUTH ===
+BENCANA: tornado
+BANGUNAN: Tidak ada kerusakan struktural yang terlihat pada bangunan di seluruh wilayah ketika membandingkan gambar sebelum dan sesudah bencana. JALAN: Tidak ada gangguan, pemblokiran, atau gangguan permukaan yang tampak di jaringan jalan di seluruh tempat kejadian saat perbandingan. VEGETASI: Penutup vegetasi tidak menunjukkan hilangnya, degradasi, atau perubahan dalam respon spektrum di kedua gambar. BADAN_AIR: Tidak ada perubahan yang terlihat dalam kehadiran, ukuran, atau konfigurasi benda air antara dua gambar. PERTANIAN: Tidak ada lahan pertanian yang teridentifikasi di dalam area yang diamati, sehingga tidak ada perubahan atau dampak yang terdeteksi. KESIMPULAN: Wilayah yang dianalisis tidak menunjukkan kerusakan atau perubahan yang dapat diamati pada struktur bangunan, infrastruktur transportasi, vegetasi, benda air, atau zona pertanian setelah peristiwa tornado. Dampak keseluruhan tampaknya tidak signifikan berdasarkan gambar yang diberikan.

@@ -1,0 +1,23 @@
+# test index 1514
+# pre : test_images\santa_rosa_wildfire_00000263_pre_disaster.png
+# post: test_images\santa_rosa_wildfire_00000263_post_disaster.png (Optical)
+# ground-truth BENCANA: api liar
+# generated BENCANA  : kebakaran hutan
+# BENCANA correct: False
+
+=== GENERATED CAPTION ===
+BENCANA: kebakaran hutan
+BANGUNAN: tidak ada kerusakan yang terlihat pada bangunan; struktur tetap utuh dan tidak terpengaruh.
+JALAN: jaringan jalan tetap utuh tanpa pemblokiran yang terlihat atau kerusakan yang diamati.
+VEGETASI: kehilangan vegetasi yang signifikan terlihat di seluruh gambar. gambar pasca bencana menunjukkan penurunan refleksi spektral yang signifikan, terutama di daerah vegetasi alami yang tidak dikelola di bagian tengah dan bawah gambar.
+BADAN_AIR: tidak ada benda air yang terlihat dalam kedua gambar, dan tidak ada perubahan yang diamati.
+PERTANIAN: tidak ada daerah pertanian yang terlihat dalam gambar, dan tidak ada dampak yang diamati.
+KESIMPULAN: kebakaran hutan telah menyebabkan kerusakan besar pada vegetasi alam, dengan bekas luka terbakar yang jelas di daerah yang terkena dampak. infrastruktur yang dibangun, jaringan jalan, dan benda air tetap tidak terpengaruh.
+
+=== GROUND TRUTH ===
+BENCANA: Api liar
+BANGUNAN: Pengurangan integritas struktural yang terlihat dan hilangnya beberapa bangunan yang terlihat di bagian atas kanan gambar pasca bencana. akumulasi puing terlihat di sekitar daerah-daerah ini.
+JALAN: Jalan-jalan di tempat kejadian tetap utuh dan tidak terhalang, tanpa perubahan yang terlihat antara gambar sebelum dan sesudah bencana.
+VEGETASI: Kehilangan vegetasi alami yang luas diamati. Tanaman rumput dan tumbuhan di bagian tengah dan bawah adegan menunjukkan perubahan tanda spektral yang menunjukkan pembakaran.
+BADAN_AIR: Tubuh air yang terletak di pusat tetap tidak berubah dalam ukuran, bentuk, dan refleksi spektral antara gambar sebelum dan pasca bencana.
+PERTANIAN: Tidak ada daerah pertanian yang terlihat baik dalam gambar sebelum bencana atau pasca bencana.
