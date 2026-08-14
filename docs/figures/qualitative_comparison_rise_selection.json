@@ -1,0 +1,102 @@
+{
+  "selected": {
+    "a": {
+      "index": 380,
+      "category": "Tidak Ada Kerusakan (Benar)",
+      "caveat": null,
+      "tag": "idx0380_badai",
+      "gt_bangunan": "Semua struktur tampak utuh tanpa tanda-tanda kerusakan atap, runtuh, atau tumpukan puing-puing.",
+      "gen_bangunan": "tidak ada kerusakan struktural yang terlihat pada bangunan; atap dan tata letak tetap konsisten antara gambar sebelum dan sesudah bencana.",
+      "rise_meta": {
+        "index": 380,
+        "n_emitted_tokens": 153,
+        "n_bangunan_content_tokens": 22,
+        "teacher_forced_argmax_match_vs_greedy": 1.0,
+        "explain_seconds": 10.0,
+        "rise_seconds": 41.99,
+        "live_regenerated_caption": "BENCANA: badai\nBANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; atap dan tata letak tetap konsisten antara gambar sebelum dan sesudah bencana.\nJALAN: jaringan jalan tetap utuh tanpa pemblokiran, kehancuran, atau banjir yang terlihat.\nVEGETASI: vegetasi di daerah alam, termasuk penutup tanaman yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.\nBADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.\nPERTANIAN: tidak ada lahan pertanian yang dikelola yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.\nKESIMPULAN: badai itu tidak menyebabkan kerusakan yang terlihat pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis."
+      }
+    },
+    "b": {
+      "index": 2028,
+      "category": "Akurat",
+      "caveat": "TIDAK DITEMUKAN contoh 'Akurat' (deteksi kerusakan nyata yang benar) di antara 12 data kurasi -- ketiga contoh dengan GT berkerusakan nyata (idx 514, 1514, 2028) semuanya diprediksi model sebagai 'tidak ada kerusakan' (under-deteksi total). Kandidat terdekat yang ditampilkan di sini adalah kasus kerusakan GT paling ringan/lokal yang tetap terlewat -- BUKAN contoh akurat, ditampilkan secara transparan sebagai bukti kegagalan kategori ini pada 12 data kurasi (n kecil, tidak mewakili seluruh test set).",
+      "tag": "idx2028_gempa-bumi",
+      "gt_bangunan": "Kerusakan atap dan puing-puing permukaan terlihat di beberapa struktur yang terkonsentrasi di dekat pusat gambar. Bangunan tetap utuh secara struktural dengan hanya dampak lokal yang mengurangi keadaan fungsional mereka.",
+      "gen_bangunan": "tidak ada kerusakan struktural yang terlihat pada bangunan; semua struktur tetap utuh dan tidak terpengaruh.",
+      "rise_meta": {
+        "index": 2028,
+        "n_emitted_tokens": 141,
+        "n_bangunan_content_tokens": 17,
+        "teacher_forced_argmax_match_vs_greedy": 1.0,
+        "explain_seconds": 8.12,
+        "rise_seconds": 41.44,
+        "live_regenerated_caption": "BENCANA: gempa bumi\nBANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; semua struktur tetap utuh dan tidak terpengaruh.\nJALAN: jaringan jalan tetap utuh tanpa pemblokiran, gangguan, atau perubahan yang terlihat.\nVEGETASI: tidak ada perubahan yang terlihat pada lapisan vegetasi alami; refleksi spektral dan penutup tanaman alami tetap konsisten di kedua gambar.\nBADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang diamati dalam gambar.\nPERTANIAN: tidak ada lahan pertanian yang dikelola yang terlihat dalam gambar, dan tidak ada dampak yang diamati.\nKESIMPULAN: gempa bumi tidak menyebabkan kerusakan yang terlihat pada bangunan, jaringan jalan, vegetasi, benda air, atau daerah pertanian di wilayah yang dianalisis."
+      }
+    },
+    "c": {
+      "index": 673,
+      "category": "Detail Terlewat",
+      "caveat": null,
+      "tag": "idx0673_gunung-berapi",
+      "gt_bangunan": "Tidak ada bukti kerusakan bangunan yang diamati. Struktur yang terlihat di daerah kiri atas dan tengah tetap utuh dengan karakteristik refleksi spektral yang tidak berubah.",
+      "gen_bangunan": "tidak ada kerusakan struktural yang terlihat pada bangunan; struktur tetap utuh tanpa tanda-tanda kerusakan atau perubahan yang terlihat.",
+      "rise_meta": {
+        "index": 673,
+        "n_emitted_tokens": 162,
+        "n_bangunan_content_tokens": 22,
+        "teacher_forced_argmax_match_vs_greedy": 1.0,
+        "explain_seconds": 10.46,
+        "rise_seconds": 43.0,
+        "live_regenerated_caption": "BENCANA: kebakaran hutan\nBANGUNAN: tidak ada kerusakan struktural yang terlihat pada bangunan; struktur tetap utuh dan tidak berubah antara gambar sebelum dan sesudah bencana. JALAN: tidak ada gangguan, pemblokiran, atau perubahan yang terlihat di jaringan jalan.\nVEGETASI: vegetasi di daerah yang tidak dikelola, termasuk padang rumput dan penutup tanaman yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.\nBADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.\nPERTANIAN: bidang pertanian di bagian bawah gambar menunjukkan perubahan refleksi spektral yang konsisten dengan kerusakan kebakaran.\nKESIMPULAN: kebakaran hutan terutama mempengaruhi vegetasi alam, dengan bukti yang jelas terbakar dan hilangnya vegetasi yang signifikan. infrastruktur yang dibangun, jaringan jalan, dan daerah pertanian tetap tidak terpengaruh."
+      }
+    },
+    "d": {
+      "index": 514,
+      "category": "Under-Deteksi (Bias)",
+      "caveat": null,
+      "tag": "idx0514_tornado",
+      "gt_bangunan": "Gambar pasca bencana menunjukkan kerusakan luas bangunan di seluruh daerah jika dibandingkan dengan gambar sebelum bencana. Sebagian besar struktur di wilayah pusat dan bawah tampaknya hancur sepenuhnya, dengan puing-puing terlihat. Oleh karena itu, dampak struktural yang signifikan terlihat di seluruh lingkungan yang dibangun.",
+      "gen_bangunan": "tidak ada kerusakan struktural yang terlihat pada bangunan; atap dan tata letak tetap konsisten antara gambar sebelum dan sesudah bencana.",
+      "rise_meta": {
+        "index": 514,
+        "n_emitted_tokens": 166,
+        "n_bangunan_content_tokens": 21,
+        "teacher_forced_argmax_match_vs_greedy": 1.0,
+        "explain_seconds": 10.17,
+        "rise_seconds": 43.49,
+        "live_regenerated_caption": "BENCANA: badai\nBANGUNAN: bangunan di daerah yang diamati tampak secara struktural utuh tanpa kerusakan struktural yang terlihat atau puing-puing yang terlihat.\nJALAN: jaringan jalan tetap utuh tanpa pemblokiran, kehancuran, atau banjir yang terlihat.\nVEGETASI: vegetasi di daerah yang tidak dikelola, termasuk penutup pohon dan daerah yang tidak dikelola, tidak menunjukkan perubahan yang terlihat dalam refleksi spektral atau cakupan antara gambar sebelum dan sesudah bencana.\nBADAN_AIR: tidak ada perubahan yang terlihat dalam ukuran, bentuk, atau kehadiran benda air yang terdeteksi dalam gambar.\nPERTANIAN: tidak ada daerah pertanian yang dapat diidentifikasi dalam gambar, dan tidak ada dampak yang diamati.\nKESIMPULAN: badai itu menyebabkan kerusakan yang signifikan pada bangunan dan hilangnya vegetasi yang signifikan, terutama di daerah yang dianalisis. fitur lain, termasuk jaringan jalan, benda air, dan daerah pertanian, tetap tidak terpengaruh."
+      }
+    }
+  },
+  "category_matching_notes": {
+    "a_candidates_all_12": [
+      81,
+      380,
+      471,
+      673,
+      1234,
+      1482,
+      1944
+    ],
+    "b_candidates_all_12": [],
+    "c_candidates_all_12": [
+      673
+    ],
+    "d_candidates_all_12": [
+      514,
+      1514,
+      2028
+    ],
+    "b_akurat_missing": true,
+    "b_akurat_missing_note": "Tidak ada contoh di antara 12 data kurasi (results/xai_examples/manifest.json) di mana ground truth BANGUNAN menunjukkan kerusakan nyata DAN prediksi model juga mengakui adanya kerusakan (bukan boilerplate 'tidak ada kerusakan'). Ketiga contoh GT-berkerusakan yang tersedia (idx 514, 1514, 2028) semuanya diprediksi 'tidak ada kerusakan' oleh model -- under-deteksi total, konsisten dengan bias terdokumentasi di docs/advisor_discussion_summary.md (rate prediksi 'tidak ada kerusakan' 78.5% vs rate asli di data 34.2%)."
+  },
+  "rise_n_masks": 1000,
+  "rise_wallclock_note": "41.8 detik/contoh (rata-rata terukur, lihat results/xai_rise/deletion_insertion_test.json rise_config.mean_seconds_per_example)",
+  "rise_significance": {
+    "deletion_p_value_vs_random_paired_bootstrap": 0.0274,
+    "insertion_p_value_vs_random_paired_bootstrap": 0.4566,
+    "source": "results/xai_rise/deletion_insertion_test.json significance_paired_bootstrap.token_f1.rise.{deletion,insertion}.paired_bootstrap_attention_minus_random.two_sided_p_value_approx"
+  },
+  "methodological_note": "Set n=12 dipilih stratified (10 tipe bencana, campuran prediksi benar/salah) untuk cakupan kualitatif yang beragam -- bukan sampel acak, dan bukan representasi statistik dari 2.362 data test set penuh. Digunakan set yang identik dengan eksperimen rollout sebelumnya agar hasil RISE dan rollout dapat dibandingkan langsung tanpa perbedaan kondisi pengujian."
+}

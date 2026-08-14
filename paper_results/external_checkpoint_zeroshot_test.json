@@ -1,0 +1,72 @@
+{
+  "n_sample": 300,
+  "seed": 42,
+  "indoblip_checkpoint": "indoblip-lr-5e-06-epoch-30 (external, general-domain, zero-shot on our task)",
+  "indoblip_generation_config": {
+    "bos_token_id": 30522,
+    "eos_token_id": 2
+  },
+  "n_generations_hit_max_new_tokens_without_eos": 0,
+  "indoblip_zero_shot": {
+    "cider": 0.0,
+    "bleu4": 5.973691956927142e-21,
+    "rougeL": 0.0,
+    "bertscore_f1_indolem": 0.317619794011116,
+    "n": 300,
+    "bencana_exact_match_rate": null,
+    "building_no_damage_rate_generated": 0.0,
+    "building_no_damage_rate_reference": 0.35333333333333333,
+    "distinct_generated_captions": 256,
+    "distinct_generated_fraction": 0.8533333333333334
+  },
+  "our_zero_shot_blip_baseline_same_sample": {
+    "cider": 1.542961294511058e-35,
+    "bleu4": 3.814895902882648e-15,
+    "rougeL": 0.018384271979661252,
+    "bertscore_f1_indolem": 0.3460698496798674
+  },
+  "our_final_vision_lora_same_sample": {
+    "cider": 0.1243716392050896,
+    "bleu4": 0.2068277293128013,
+    "rougeL": 0.41619409409149266,
+    "bertscore_f1_indolem": 0.7962079292535782,
+    "n": 300,
+    "bencana_exact_match_rate": 0.7333333333333333,
+    "building_no_damage_rate_generated": 0.7566666666666667,
+    "building_no_damage_rate_reference": 0.35333333333333333,
+    "distinct_generated_captions": 288,
+    "distinct_generated_fraction": 0.96
+  },
+  "sample_generations": [
+    {
+      "index": 2,
+      "reference": "BENCANA: ledakan\nBANGUNAN: kerusakan struktural yang signifikan terlihat. bangunan pra-bencana di sepanjang bagian kiri dan bawah kanan gambar menunjukkan kerusakan parsial atau lengkap dalam gambar pasca-bencana. lapangan puing yang menonjol menggantikan struktur yang sebelumnya utuh di dekat bagian bawah gambar pasca-bencana.\nJALAN: jaringan jalan, termasuk rotasi yang menonjol di pusat gambar, ",
+      "indoblip_generated": "[unused487] fingers [unused33] [unused824] concerned [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused"
+    },
+    {
+      "index": 8,
+      "reference": "BENCANA: ledakan\nBANGUNAN: tidak ada kerusakan yang terlihat pada struktur yang dibangun di bagian kanan bawah gambar; fitur seperti dermaga yang dibangun tetap utuh dengan pola refleksi yang konsisten antara gambar sebelum dan pasca bencana.\nJALAN: tidak ada perubahan yang terlihat pada jalan atau infrastruktur aspal di dekat bagian bawah kanan; fitur linier menunjukkan sifat spasial dan spektral",
+      "indoblip_generated": "[unused487] gene 千 [unused97] [unused436] indicated [unused2] [unused25] [unused436] [unused487] window ை [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unu"
+    },
+    {
+      "index": 13,
+      "reference": "BENCANA: ledakan\nBANGUNAN: beberapa bangunan yang terletak di pusat dan bagian bawah gambar menunjukkan kerusakan struktural yang terlihat.\nJALAN: jaringan jalan tampak utuh tanpa pemblokiran yang terlihat, gangguan permukaan, atau hilangnya konektivitas antara gambar sebelum dan pasca bencana.\nVEGETASI: tidak ada perubahan yang terlihat di daerah vegetasi alami yang tidak terkendali, karena pola ",
+      "indoblip_generated": "[unused487] 72 [unused678] [unused25] [unused107] fingers [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [u"
+    },
+    {
+      "index": 26,
+      "reference": "BENCANA: ledakan\nBANGUNAN: tidak ada kerusakan struktural pada bangunan yang jelas dalam gambar pasca bencana jika dibandingkan dengan gambar sebelum bencana. semua struktur mempertahankan jejak, keselarasan, dan konsistensi spektrum aslinya.\nJALAN: tidak ada gangguan atau pemblokiran jaringan jalan yang terlihat; permukaan aspal tetap utuh dengan refleksi spektrum yang konsisten, yang menunjukkan",
+      "indoblip_generated": "[unused487] fingers [unused712] [unused33] [unused824] glanced [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused"
+    },
+    {
+      "index": 29,
+      "reference": "BENCANA: ledakan\nBANGUNAN: kerusakan yang signifikan dapat diamati di seluruh area yang dibangun dalam gambar pasca bencana. banyak struktur gudang yang terlihat dalam gambar sebelum bencana tampaknya telah benar-benar dihancurkan, dengan hanya sisa-sisa atau fondasi yang terlihat. struktur silo besar pusat menunjukkan kompromi struktural parsial, dengan puing-puing tersebar di wilayah-wilayah ber",
+      "indoblip_generated": "[unused487] fingers previously る [unused33] [unused824] glanced [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unuse"
+    },
+    {
+      "index": 32,
+      "reference": "BENCANA: ledakan\nBANGUNAN: kerusakan struktural yang luas terlihat di seluruh lingkungan yang dibangun. beberapa bangunan di daerah pusat dan atas gambar pasca bencana menunjukkan tanda-tanda runtuh sebagian atau lengkap, dengan pola puing struktural yang tidak teratur terdeteksi.\nJALAN: segmen jalan di bagian tengah dan atas gambar tampak terhambat atau terkena oleh puing-puing, terutama yang ber",
+      "indoblip_generated": "[unused487] fingers [unused712] [unused78] [unused266] strong [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2] [unused2"
+    }
+  ]
+}

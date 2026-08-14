@@ -1,0 +1,664 @@
+{
+  "n_total_records": 2362,
+  "n_candidates": 73,
+  "note": "Candidates are UNVERIFIED (heuristic GT filter) -- read gt_bangunan/gen_bangunan before citing any of these as a genuine accurate-detection example.",
+  "candidates": [
+    {
+      "index": 1,
+      "gt_bencana": "Ledakan",
+      "gen_bencana": "ledakan",
+      "gt_bangunan": "Kerusakan pada struktur individu dapat diamati, terutama perubahan atap dan degradasi struktural. Warna atap dan variasi refleksi menunjukkan kerusakan parsial pada beberapa bangunan dalam gambar pasca bencana, terutama di daerah pusat atas dan kanan. Kerusakan tampaknya terlokalisasi tanpa runtuh yang luas terlihat.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau hancur, dengan perubahan refleksi spektral yang menunjukkan kerusakan permukaan yang signifikan.",
+      "pre_image_path": "test_images\\bata_explosion_pre_0.png",
+      "post_image_path": "test_images\\bata_explosion_sar_post_0.png"
+    },
+    {
+      "index": 226,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang signifikan terlihat pada bangunan di bagian tengah gambar, dengan banjir menutupi atap dan daerah sekitarnya, menunjukkan potensi hilangnya fungsi dan integritas.",
+      "gen_bangunan": "bangunan di bagian bawah gambar menunjukkan banjir yang terlihat, dengan beberapa bangunan yang terlihat dalam gambar pasca bencana, terutama di dekat bagian tengah dan kanan gambar.",
+      "pre_image_path": "test_images\\hurricane_harvey_00000124_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_harvey_00000124_post_disaster.png"
+    },
+    {
+      "index": 229,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Banjir air yang terlihat telah berdampak signifikan pada bangunan perumahan di seluruh daerah. Banyak atap yang diamati sebagian tenggelam, menunjukkan tingkat banjir yang parah yang kemungkinan telah menyebabkan kerusakan struktural dan interior.",
+      "gen_bangunan": "beberapa struktur di bagian tengah dan bawah gambar menunjukkan kerusakan yang terlihat, dengan beberapa atap yang menunjukkan kerusakan atap yang terlihat, yang menunjukkan dampak parah pada beberapa bangunan.",
+      "pre_image_path": "test_images\\hurricane_harvey_00000149_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_harvey_00000149_post_disaster.png"
+    },
+    {
+      "index": 246,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Banjir terlihat dalam gambar pasca bencana di seluruh daerah yang mengandung struktur. Ini menunjukkan potensi kerusakan pada bangunan, dengan beberapa yang berpotensi tenggelam atau secara signifikan terpengaruh oleh peningkatan tingkat air.",
+      "gen_bangunan": "bangunan di bagian bawah gambar menunjukkan banjir yang terlihat, dengan beberapa bangunan yang terlihat dalam gambar pasca bencana, terutama di bagian",
+      "pre_image_path": "test_images\\hurricane_harvey_00000301_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_harvey_00000301_post_disaster.png"
+    },
+    {
+      "index": 248,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan yang terlihat di bagian atas dan tengah gambar dibanjiri dalam gambar pasca bencana, kemungkinan mengakibatkan kerusakan struktural atau hilangnya fungsi penuh karena banjir.",
+      "gen_bangunan": "bangunan di bagian bawah kanan gambar menunjukkan banjir yang signifikan, dengan beberapa bangunan yang terlihat dalam gambar pasca bencana.",
+      "pre_image_path": "test_images\\hurricane_harvey_00000319_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_harvey_00000319_post_disaster.png"
+    },
+    {
+      "index": 250,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Banjir yang terlihat mempengaruhi struktur yang diamati di tengah-tengah kanan tempat kejadian. Bangunan yang sebelumnya dapat diidentifikasi tenggelam atau sebagian ditutupi oleh air banjir, menunjukkan dampak struktural.",
+      "gen_bangunan": "bangunan di bagian bawah gambar menunjukkan banjir yang terlihat, dengan beberapa struktur yang terlihat dalam gambar pasca bencana.",
+      "pre_image_path": "test_images\\hurricane_harvey_00000337_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_harvey_00000337_post_disaster.png"
+    },
+    {
+      "index": 258,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang luas terlihat di seluruh lingkungan yang dibangun, dengan banyak atap dan struktur di tempat kejadian menunjukkan dampak banjir. Hampir semua bangunan berada di bawah air, menunjukkan potensi kompromi struktural dan hilangnya fungsionalitas.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau tenggelam, dengan puing-puing yang terlihat di beberapa struktur yang menunjukkan kerusakan atau akumulasi puing.",
+      "pre_image_path": "test_images\\hurricane_harvey_00000404_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_harvey_00000404_post_disaster.png"
+    },
+    {
+      "index": 324,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Beberapa struktur yang dibangun menunjukkan kerusakan yang terlihat. Dalam gambar pasca bencana, banyak bangunan di bagian atas dan tengah area menunjukkan berbagai tingkat kerusakan, termasuk puing-puing dan kerusakan struktural.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\hurricane_matthew_00000347_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_matthew_00000347_post_disaster.png"
+    },
+    {
+      "index": 334,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Gambar pasca bencana menunjukkan kerusakan struktural yang luas pada banyak bangunan, yang dapat diidentifikasi oleh puing-puing atap, bagian yang hilang, dan ketidaksetaraan keseluruhan dalam refleksi dibandingkan dengan gambar sebelum bencana. Kerusakan ini tersebar luas di seluruh area yang diamati, terutama terkonsentrasi ke arah bagian tengah.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap dan puing-puing tersebar di beberapa struktur, terutama di bagian tengah dan kanan gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000018_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000018_post_disaster.png"
+    },
+    {
+      "index": 338,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan di daerah yang diamati tampak secara struktural utuh, tanpa perubahan yang terlihat atau kerusakan antara gambar sebelum dan sesudah bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\hurricane_michael_00000058_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000058_post_disaster.png"
+    },
+    {
+      "index": 341,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan tampak secara struktural utuh, tanpa bukti yang terlihat kerusakan atap, runtuh, atau puing-puing yang ada di antara gambar sebelum dan setelah bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau rusak, dengan puing-puing yang terlihat di beberapa struktur yang menunjukkan kerusakan atau puing.",
+      "pre_image_path": "test_images\\hurricane_michael_00000085_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000085_post_disaster.png"
+    },
+    {
+      "index": 342,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang luas terlihat di seluruh lingkungan bangunan, terutama di bagian tengah dan bawah gambar. Kehancuran atap dan puing-puing terlihat di berbagai struktur, bersama dengan penampilan landasan bangunan yang terpapar atau zona runtuh.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap dan puing-puing tersebar di beberapa struktur, terutama di bagian tengah dan kanan gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000095_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000095_post_disaster.png"
+    },
+    {
+      "index": 344,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang signifikan dapat diamati di kanan tengah, di mana beberapa bangunan besar atau struktur industri yang hadir dalam gambar sebelum bencana tampak runtuh atau sangat terganggu dalam gambar pasca bencana.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap atau akumulasi puing-puing, yang menunjukkan kerusakan yang luas.",
+      "pre_image_path": "test_images\\hurricane_michael_00000113_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000113_post_disaster.png"
+    },
+    {
+      "index": 352,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan tampak secara struktural utuh, tanpa perubahan bentuk atau penempatan yang terlihat ketika membandingkan gambar sebelum bencana dan pasca bencana.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap dan puing-puing tersebar di daerah.",
+      "pre_image_path": "test_images\\hurricane_michael_00000185_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000185_post_disaster.png"
+    },
+    {
+      "index": 355,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang signifikan diamati di berbagai bangunan, terutama di daerah kanan tengah dan kanan atas, yang ditandai dengan kehilangan atap, akumulasi puing-puing, dan runtuh struktural parsial yang terlihat dalam gambar pasca bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000212_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000212_post_disaster.png"
+    },
+    {
+      "index": 357,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang signifikan diamati di sebagian besar bangunan yang terlihat dalam gambar pasca bencana, terutama di atap, dengan puing-puing tersebar jelas.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000230_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000230_post_disaster.png"
+    },
+    {
+      "index": 358,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan menunjukkan kerusakan struktural yang luas, terutama terlihat di bagian tengah dan kanan gambar. Banyak atap tampak terguling atau hilang, dan tata ruang puing-puing menunjukkan runtuh atau kerusakan parah dari beberapa struktur.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000239_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000239_post_disaster.png"
+    },
+    {
+      "index": 359,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Dalam gambar pasca bencana, beberapa bangunan menunjukkan kerusakan atap, runtuhnya struktural, dan akumulasi puing-puing, terutama di bagian tengah dan bawah gambar.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\hurricane_michael_00000249_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000249_post_disaster.png"
+    },
+    {
+      "index": 362,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Ada kerusakan yang luas yang terlihat di lingkungan yang dibangun, dengan beberapa struktur menunjukkan kehilangan atap, runtuhnya struktur, dan pembubaran puing-puing, terutama terkonsentrasi di pusat gambar dan bagian ke bagian bawah.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan puing-puing tersebar di beberapa struktur menunjukkan kerusakan atau kerusakan yang terlihat.",
+      "pre_image_path": "test_images\\hurricane_michael_00000276_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000276_post_disaster.png"
+    },
+    {
+      "index": 365,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang luas terlihat, termasuk kehilangan atap yang signifikan dan keberadaan puing-puing di beberapa bangunan, terutama terkonsentrasi di bagian atas tengah dan kanan atas gambar.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\hurricane_michael_00000303_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000303_post_disaster.png"
+    },
+    {
+      "index": 369,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Analisis komparatif mengungkapkan kerusakan struktural yang substansial pada banyak bangunan, terutama terlihat di bagian tengah dan atas pusat gambar pasca bencana. Struktur atap tampaknya terganggu, puing terlihat di dekat bangunan yang terkena dampak, dan beberapa bangunan tampaknya hancur sepenuhnya.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000339_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000339_post_disaster.png"
+    },
+    {
+      "index": 370,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural kecil terlihat, dengan kerusakan atap parsial dan puing-puing tersebar di beberapa struktur di seluruh wilayah.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap dan puing-puing tersebar di beberapa struktur, terutama di bagian tengah dan kanan gambar.",
+      "pre_image_path": "test_images\\hurricane_michael_00000348_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000348_post_disaster.png"
+    },
+    {
+      "index": 379,
+      "gt_bencana": "badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Beberapa bangunan menunjukkan kerusakan struktural, terutama di bagian tengah dan bawah kanan gambar pasca bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\hurricane_michael_00000432_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000432_post_disaster.png"
+    },
+    {
+      "index": 384,
+      "gt_bencana": "Badai",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Banyak bangunan di daerah atas dan bawah menunjukkan kerusakan atap, yang ditunjukkan oleh peningkatan refleksi dalam gambar pasca bencana yang menunjukkan paparan bahan.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\hurricane_michael_00000477_pre_disaster.png",
+      "post_image_path": "test_images\\hurricane_michael_00000477_post_disaster.png"
+    },
+    {
+      "index": 393,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Daerah ini menunjukkan kerusakan struktural yang luas di beberapa unit perumahan, termasuk kehancuran lengkap bangunan yang terlihat dalam gambar pasca bencana dibandingkan dengan struktur utuh dalam gambar sebelum bencana. Ini konsisten dengan dampak tornado intensitas tinggi yang biasanya terkait dengan gangguan parah pada lingkungan yang dibangun.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\joplin_tornado_00000001_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000001_post_disaster.png"
+    },
+    {
+      "index": 403,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang meluas terlihat, dengan kerusakan yang signifikan pada bangunan perumahan yang terlihat di bagian tengah dan bawah gambar pasca bencana. Banyak struktur dirobohkan sepenuhnya, digantikan oleh ladang puing-puing. Namun, kantong struktur utuh tetap tersebar di seluruh.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\joplin_tornado_00000011_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000011_post_disaster.png"
+    },
+    {
+      "index": 406,
+      "gt_bencana": "Tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Banyak struktur di pusat dan ke sisi kanan gambar mengalami kerusakan hampir total, dengan medan puing-puing yang jelas terlihat. Banyak atap hilang, dinding runtuh, dan beberapa bangunan tampak benar-benar datar, dengan sisa-sisa tersebar.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar. beberapa bangunan menunjukkan kerusakan atap atau sebagian atau akumulasi puing-puing.",
+      "pre_image_path": "test_images\\joplin_tornado_00000014_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000014_post_disaster.png"
+    },
+    {
+      "index": 408,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Gambar pasca bencana menunjukkan kerusakan struktural yang meluas di seluruh daerah, dengan banyak bangunan yang benar-benar hancur atau rusak parah. Serpihan tersebar dengan mencolok, terutama di bagian tengah dan atas gambar.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\joplin_tornado_00000016_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000016_post_disaster.png"
+    },
+    {
+      "index": 448,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang meluas terlihat di seluruh lingkungan yang dibangun di seluruh adegan. Bangunan di bagian tengah dan bawah gambar telah mengalami kompromi struktural yang parah, dengan banyak struktur sebagian atau sepenuhnya dihancurkan. Lapangan puing terlihat, memanjang ke luar ke area terbuka terdekat.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\joplin_tornado_00000057_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000057_post_disaster.png"
+    },
+    {
+      "index": 480,
+      "gt_bencana": "Tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang luas terlihat di daerah; banyak bangunan telah hancur sepenuhnya atau menunjukkan atap dan runtuh struktural yang signifikan berdasarkan perubahan refleksi spektral dan tanda tangan puing yang terlihat setelah peristiwa.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\joplin_tornado_00000089_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000089_post_disaster.png"
+    },
+    {
+      "index": 509,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Meskipun perubahan struktural yang terlihat hadir di beberapa area dalam gambar pasca bencana, tingkat bangunan_affect_level yang diberikan menunjukkan tidak adanya kerusakan. Bangunan tampak secara struktural utuh tanpa perubahan yang dapat diamati.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\joplin_tornado_00000118_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000118_post_disaster.png"
+    },
+    {
+      "index": 510,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Gambar pasca bencana mengungkapkan kehancuran struktur yang luas, dengan hanya fragmentasi atau runtuh yang terlihat di seluruh bagian tengah dan atas tempat kejadian. Kehadiran seragam puing-puing struktur sangat menunjukkan kerusakan parah.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\joplin_tornado_00000119_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000119_post_disaster.png"
+    },
+    {
+      "index": 512,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Semua bangunan dalam gambar mempertahankan integritas struktural mereka, terlihat sebagai pola atap yang konsisten dan tidak ada runtuh atau medan puing-puing.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\joplin_tornado_00000121_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000121_post_disaster.png"
+    },
+    {
+      "index": 516,
+      "gt_bencana": "tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Penghancuran bangunan besar terlihat di seluruh area yang terkena dampak dalam gambar pasca bencana. Sebagian besar struktur yang terlihat dalam gambar sebelum bencana telah rata atau sangat rusak, dengan ladang puing-puing menempati jejak bekas mereka. Daerah yang sebelumnya menampilkan pembangunan perumahan atau komersial yang padat, seperti bagian tengah dan kanan tengah gambar, menunjukkan penghapusan luas.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\joplin_tornado_00000125_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000125_post_disaster.png"
+    },
+    {
+      "index": 520,
+      "gt_bencana": "Tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan-bangunan di daerah ini menunjukkan runtuhnya struktural yang luas dan adanya puing-puing. Struktur yang paling terlihat terpengaruh direduksi menjadi fondasi atau atap yang rusak parah, dengan puing-puing besar tersebar di seluruh daerah.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan yang signifikan.",
+      "pre_image_path": "test_images\\joplin_tornado_00000129_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000129_post_disaster.png"
+    },
+    {
+      "index": 536,
+      "gt_bencana": "Tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Gambar pasca bencana menunjukkan kerusakan struktural yang meluas di seluruh daerah. Hampir semua bangunan yang terlihat dalam gambar sebelum bencana rusak parah atau diruntuhkan sepenuhnya, terutama di daerah pusat dan atas gambar. Hanya sedikit sisa struktur yang utuh yang tersisa, dan ladang puing-puing terlihat di seluruh wilayah.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap, dan akumulasi puing-puing yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\joplin_tornado_00000146_pre_disaster.png",
+      "post_image_path": "test_images\\joplin_tornado_00000146_post_disaster.png"
+    },
+    {
+      "index": 580,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Kerusakan struktural terlihat di beberapa bangunan, terutama di bagian bawah dan kanan gambar. akumulasi puing-puing dan atap yang rusak terlihat, menunjukkan dampak yang parah.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan yang jelas, dengan perubahan refleksi spektral yang menunjukkan kerusakan struktural atau kerusakan struktural.",
+      "pre_image_path": "test_images\\libya_flood_pre_85.png",
+      "post_image_path": "test_images\\libya_flood_post_85.png"
+    },
+    {
+      "index": 586,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa bangunan menunjukkan indikasi kerusakan struktural parsial atau erosi di dasar karena paparan air, terutama di bagian tengah dan kiri daerah yang terkena dampak.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau rusak, dengan beberapa struktur yang menunjukkan runtuh atau sebagian besar.",
+      "pre_image_path": "test_images\\libya_flood_pre_88.png",
+      "post_image_path": "test_images\\libya_flood_post_88.png"
+    },
+    {
+      "index": 587,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa bangunan menunjukkan indikasi kerusakan struktural parsial atau erosi di dasar karena paparan air, terutama di bagian tengah dan kiri daerah yang terkena dampak.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau dipindahkan, dengan beberapa bangunan menunjukkan kerusakan atau akumulasi puing-puing.",
+      "pre_image_path": "test_images\\libya_flood_pre_88.png",
+      "post_image_path": "test_images\\libya_flood_sar_post_88.png"
+    },
+    {
+      "index": 592,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Banyak struktur di seluruh wilayah menunjukkan kerusakan yang signifikan, dengan runtuh dan puing-puing yang terlihat jelas dalam gambar pasca bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan yang jelas, dengan beberapa struktur yang menunjukkan kerusakan atau akumulasi puing-puing.",
+      "pre_image_path": "test_images\\libya_flood_pre_91.png",
+      "post_image_path": "test_images\\libya_flood_post_91.png"
+    },
+    {
+      "index": 593,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Banyak struktur di seluruh wilayah menunjukkan kerusakan yang signifikan, dengan runtuh dan puing-puing yang terlihat jelas dalam gambar pasca bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau rusak, dengan perubahan refleksi spektral yang menunjukkan kerusakan struktural.",
+      "pre_image_path": "test_images\\libya_flood_pre_91.png",
+      "post_image_path": "test_images\\libya_flood_sar_post_91.png"
+    },
+    {
+      "index": 734,
+      "gt_bencana": "Gempa bumi",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan di area yang diamati mempertahankan integritas struktural mereka, tanpa runtuh, deformasi, atau puing-puing yang terlihat terdeteksi.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\mexico_earthquake_00000016_pre_disaster.png",
+      "post_image_path": "test_images\\mexico_earthquake_00000016_post_disaster.png"
+    },
+    {
+      "index": 801,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "tsunami",
+      "gt_bangunan": "Semua bangunan di area yang ditangkap menampilkan struktur atap yang konsisten, bentuk jejak, dan keselarasan tanpa kompromi struktural yang terlihat antara gambar sebelum dan sesudah bencana.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan puing-puing, yang menunjukkan kerusakan parsial atau kerusakan struktural.",
+      "pre_image_path": "test_images\\mexico_earthquake_00000083_pre_disaster.png",
+      "post_image_path": "test_images\\mexico_earthquake_00000083_post_disaster.png"
+    },
+    {
+      "index": 803,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "tsunami",
+      "gt_bangunan": "Kerusakan struktural kecil terlihat, seperti yang ditunjukkan oleh perubahan kecil di atap dan garis bangunan, terutama di dekat bagian tengah dan bawah gambar.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan kerusakan atap yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\mexico_earthquake_00000085_pre_disaster.png",
+      "post_image_path": "test_images\\mexico_earthquake_00000085_post_disaster.png"
+    },
+    {
+      "index": 807,
+      "gt_bencana": "Gempa bumi",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Gambar sebelum dan sesudah bencana menunjukkan jejak bangunan yang konsisten dan struktur atap yang utuh.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna atap atau akumulasi puing-puing, yang menunjukkan kerusakan atau kerusakan.",
+      "pre_image_path": "test_images\\mexico_earthquake_00000089_pre_disaster.png",
+      "post_image_path": "test_images\\mexico_earthquake_00000089_post_disaster.png"
+    },
+    {
+      "index": 876,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "tsunami",
+      "gt_bangunan": "Tidak ada keruntuhan struktural yang terlihat atau perubahan yang terlihat di lingkungan yang dibangun. tepi struktural tetap didefinisikan dengan baik dan tidak terganggu dalam perbandingan antara gambar sebelum dan pasca bencana.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan potensi kerusakan parsial.",
+      "pre_image_path": "test_images\\mexico_earthquake_00000158_pre_disaster.png",
+      "post_image_path": "test_images\\mexico_earthquake_00000158_post_disaster.png"
+    },
+    {
+      "index": 895,
+      "gt_bencana": "Gempa bumi",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Bangunan di daerah ini tampak secara struktural utuh tanpa runtuh, puing-puing, atau perubahan yang terlihat ketika membandingkan gambar sebelum bencana dan pasca bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\mexico_earthquake_00000177_pre_disaster.png",
+      "post_image_path": "test_images\\mexico_earthquake_00000177_post_disaster.png"
+    },
+    {
+      "index": 912,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Bangunan yang terlihat dalam gambar sebelum bencana menunjukkan banjir struktural dalam gambar pasca bencana, ditandai dengan gangguan air banjir dan hilangnya fitur bangunan yang dapat dibedakan.",
+      "gen_bangunan": "bangunan-bangunan di bagian bawah gambar tampak banjir, dengan air banjir yang terlihat di gambar pasca bencana.",
+      "pre_image_path": "test_images\\midwest_flooding_00000006_pre_disaster.png",
+      "post_image_path": "test_images\\midwest_flooding_00000006_post_disaster.png"
+    },
+    {
+      "index": 948,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Bangunan yang terutama terlihat di kanan bawah gambar pra-bencana banjir di gambar pasca-bencana, mencerminkan kompromi struktural atau tenggelam karena adanya air banjir.",
+      "gen_bangunan": "bangunan di bagian bawah kanan gambar menunjukkan banjir yang signifikan, dengan air banjir yang terlihat di gambar pasca bencana.",
+      "pre_image_path": "test_images\\midwest_flooding_00000286_pre_disaster.png",
+      "post_image_path": "test_images\\midwest_flooding_00000286_post_disaster.png"
+    },
+    {
+      "index": 1047,
+      "gt_bencana": "Banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa struktur, terutama berkonsentrasi di dekat pusat daerah yang terkena dampak, sebagian atau sepenuhnya banjir seperti yang diamati dalam gambar pasca bencana dibandingkan dengan gambar sebelum bencana. Air banjir meliputi bagian yang signifikan dari area yang dibangun, menunjukkan dampak yang signifikan pada struktur perumahan dan struktur lainnya.",
+      "gen_bangunan": "bangunan di bagian bawah gambar menunjukkan banjir yang signifikan, dengan air banjir yang terlihat di gambar pasca bencana.",
+      "pre_image_path": "test_images\\nepal_flooding_00000167_pre_disaster.png",
+      "post_image_path": "test_images\\nepal_flooding_00000167_post_disaster.png"
+    },
+    {
+      "index": 1060,
+      "gt_bencana": "banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa struktur yang terlihat di dekat tepi kiri gambar sebelum bencana banjir di gambar pasca bencana. Sementara atap masih sebagian terlihat, air banjir mengelilingi struktur-struktur ini, menunjukkan kemungkinan kerusakan pada tingkat dan interior yang lebih rendah.",
+      "gen_bangunan": "bangunan di bagian bawah kanan gambar tampak banjir, dengan air banjir yang terlihat di sekitar struktur yang dibangun.",
+      "pre_image_path": "test_images\\nepal_flooding_00000302_pre_disaster.png",
+      "post_image_path": "test_images\\nepal_flooding_00000302_post_disaster.png"
+    },
+    {
+      "index": 1061,
+      "gt_bencana": "banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa struktur yang terletak di bagian bawah kiri gambar pasca bencana tampaknya dikelilingi atau dilanda air, yang menunjukkan dampak yang substansial.",
+      "gen_bangunan": "bangunan di bagian bawah gambar menunjukkan banjir yang terlihat, dengan beberapa struktur yang menunjukkan banjir yang terlihat dan kemungkinan karena banjir.",
+      "pre_image_path": "test_images\\nepal_flooding_00000312_pre_disaster.png",
+      "post_image_path": "test_images\\nepal_flooding_00000312_post_disaster.png"
+    },
+    {
+      "index": 1090,
+      "gt_bencana": "banjir",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Kerusakan struktural kecil diamati, termasuk runtuhnya sebagian dan puing-puing tersebar di beberapa daerah, terutama terkonsentrasi di bagian bawah kanan dan tengah gambar.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan refleksi atap atau dan akumulasi puing-puing, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\nepal_flooding_00000608_pre_disaster.png",
+      "post_image_path": "test_images\\nepal_flooding_00000608_post_disaster.png"
+    },
+    {
+      "index": 1165,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Kerusakan luas pada bangunan terlihat di seluruh daerah; banyak struktur menunjukkan runtuhnya sebagian atau akumulasi puing-puing, terutama di dekat sungai dan daerah terpusat. Kerusakan atap dan kerusakan struktural terlihat di berbagai lokasi.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan refleksi atap atau",
+      "pre_image_path": "test_images\\noto_earthquake_pre_161.png",
+      "post_image_path": "test_images\\noto_earthquake_post_161.png"
+    },
+    {
+      "index": 1167,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Kerusakan struktural yang luas diamati, dengan banyak bangunan di bagian atas dan tengah runtuh atau menunjukkan akumulasi puing berat.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan kerusakan atap atau akumulasi puing-puing, terutama di bagian tengah dan kanan gambar.",
+      "pre_image_path": "test_images\\noto_earthquake_pre_162.png",
+      "post_image_path": "test_images\\noto_earthquake_post_162.png"
+    },
+    {
+      "index": 1185,
+      "gt_bencana": "Gempa bumi",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa bangunan di bagian tengah dan bawah gambar menunjukkan perubahan warna atap, runtuh sebagian, dan susunan yang tidak teratur yang menunjukkan kerusakan struktural. Namun, kondisi bangunan secara keseluruhan menunjukkan kerusakan yang relatif terbatas di seluruh daerah.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan potensi kerusakan struktural, yang menunjukkan dampak struktural atau kerusakan struktural.",
+      "pre_image_path": "test_images\\noto_earthquake_pre_171.png",
+      "post_image_path": "test_images\\noto_earthquake_post_171.png"
+    },
+    {
+      "index": 1187,
+      "gt_bencana": "Gempa bumi",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Beberapa struktur di bagian tengah gambar menunjukkan perubahan warna atap dan deformasi struktural yang menunjukkan kerusakan parsial, terutama di atap putih dan bangunan berwarna ringan.",
+      "gen_bangunan": "kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan potensi kerusakan struktural, yang menunjukkan kerusakan atap yang mungkin disebabkan oleh akumulasi puing-puing.",
+      "pre_image_path": "test_images\\noto_earthquake_pre_172.png",
+      "post_image_path": "test_images\\noto_earthquake_post_172.png"
+    },
+    {
+      "index": 1201,
+      "gt_bencana": "Gempa bumi",
+      "gen_bencana": "kebakaran hutan",
+      "gt_bangunan": "Kerusakan struktural yang terlihat dapat diamati terutama di kuadran kiri atas gambar. Beberapa bangunan individu menunjukkan runtuhnya sebagian, akumulasi puing-puing, dan kerusakan atap yang konsisten dengan dampak seismik.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\noto_earthquake_pre_179.png",
+      "post_image_path": "test_images\\noto_earthquake_post_179.png"
+    },
+    {
+      "index": 1221,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "banjir",
+      "gt_bangunan": "Bangunan di seluruh gambar menunjukkan gangguan yang konsisten dengan kerusakan struktural, seperti penyingkiran atap, akumulasi puing-puing yang terlihat, dan runtuh sebagian.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan potensi kerusakan struktural, yang menunjukkan dampak struktural.",
+      "pre_image_path": "test_images\\noto_earthquake_pre_189.png",
+      "post_image_path": "test_images\\noto_earthquake_post_189.png"
+    },
+    {
+      "index": 1229,
+      "gt_bencana": "tsunami",
+      "gen_bencana": "tsunami",
+      "gt_bangunan": "Kerusakan struktural kecil diamati di seluruh lingkungan yang dibangun, dengan runtuhnya sebagian dan puing-puing tersebar terlihat di setengah bawah gambar pasca bencana.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan potensi kerusakan parsial.",
+      "pre_image_path": "test_images\\palu_tsunami_00000002_pre_disaster.png",
+      "post_image_path": "test_images\\palu_tsunami_00000002_post_disaster.png"
+    },
+    {
+      "index": 1296,
+      "gt_bencana": "tsunami",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural kecil terlihat di beberapa bangunan, terutama di bagian tengah dan atas gambar, dengan runtuhnya sebagian dan puing-puing tersebar jelas.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\palu_tsunami_00000119_pre_disaster.png",
+      "post_image_path": "test_images\\palu_tsunami_00000119_post_disaster.png"
+    },
+    {
+      "index": 1303,
+      "gt_bencana": "tsunami",
+      "gen_bencana": "tsunami",
+      "gt_bangunan": "Gambar setelah bencana menunjukkan kerusakan bangunan yang luas, terutama di daerah atas dekat garis pantai, di mana banyak struktur sebagian atau seluruhnya dihancurkan. Bahan atap dan fitur struktural terganggu atau hilang, dan ladang puing-puing terlihat di daerah yang sebelumnya dikembangkan.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan perubahan warna dan potensi kerusakan parsial.",
+      "pre_image_path": "test_images\\palu_tsunami_00000131_pre_disaster.png",
+      "post_image_path": "test_images\\palu_tsunami_00000131_post_disaster.png"
+    },
+    {
+      "index": 1328,
+      "gt_bencana": "Tsunami",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan luas bangunan terlihat di bagian bawah dan tengah. Banyak struktur yang hadir dalam gambar sebelum bencana telah benar-benar dihancurkan atau dikurangi menjadi puing-puing dalam gambar pasca bencana. Struktur yang tersisa terutama menunjukkan bukti kerusakan.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\palu_tsunami_00000165_pre_disaster.png",
+      "post_image_path": "test_images\\palu_tsunami_00000165_post_disaster.png"
+    },
+    {
+      "index": 1474,
+      "gt_bencana": "kebakaran hutan",
+      "gen_bencana": "api",
+      "gt_bangunan": "Kerusakan struktural yang luas diamati di seluruh lingkungan yang dibangun. Sebagian besar bangunan yang terlihat dalam gambar pra-bencana tampaknya hancur atau sangat terpengaruh dalam gambar pasca-bencana, dengan tanda-tanda terbakar yang luas, seperti yang dibuktikan oleh prevalensi tinggi nada berwarna abu dan pola puing-puing. Struktur atap dan garis besar yang biasanya terlihat dalam gambar pra-bencana tidak ada di sebagian besar area gambar pasca-bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000012_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000012_post_disaster.png"
+    },
+    {
+      "index": 1490,
+      "gt_bencana": "kebakaran hutan",
+      "gen_bencana": "api liar",
+      "gt_bangunan": "Kompleks perumahan di dekat pusat gambar telah mengalami kerusakan yang luas. Struktur pra-bencana yang utuh terlihat digantikan dalam gambar pasca-bencana oleh sisa-sisa yang konsisten dengan runtuhnya struktural dan kerusakan kebakaran, yang dibuktikan oleh lapangan puing yang tidak teratur, kontras tinggi dan hilangnya atap yang ditentukan.",
+      "gen_bangunan": "bangunan di daerah yang terkena dampak menunjukkan kerusakan yang terlihat, termasuk perubahan warna dan hilangnya integritas struktural.",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000111_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000111_post_disaster.png"
+    },
+    {
+      "index": 1502,
+      "gt_bencana": "Api liar",
+      "gen_bencana": "api liar",
+      "gt_bangunan": "Kerusakan yang signifikan pada struktur terlihat jelas. Bangunan yang terlihat dalam gambar pra-bencana di pusat, kanan, dan daerah bawah menunjukkan kerusakan yang luas dalam gambar pasca-bencana, dengan sisa-sisa fondasi terlihat dan atap atau dinding tidak lagi utuh.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di bagian tengah dan kanan atas gambar pasca bencana, dengan beberapa bangunan yang terlihat di bagian",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000186_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000186_post_disaster.png"
+    },
+    {
+      "index": 1507,
+      "gt_bencana": "kebakaran hutan",
+      "gen_bencana": "api liar",
+      "gt_bangunan": "Kerusakan struktural yang luas terlihat dalam gambar pasca bencana, dengan beberapa bangunan menunjukkan kerusakan lengkap. atap dan garis besar struktural tidak lagi terlihat di beberapa lokasi dibandingkan dengan struktur yang didefinisikan dengan baik dalam gambar sebelum bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan di bagian tengah dan kanan atas gambar.",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000217_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000217_post_disaster.png"
+    },
+    {
+      "index": 1511,
+      "gt_bencana": "kebakaran hutan",
+      "gen_bencana": "kebakaran hutan",
+      "gt_bangunan": "Penghancuran bangunan yang signifikan terlihat di seluruh daerah, dengan banyak struktur yang dikurangi sampai pada fondasinya dan hilangnya material atap.",
+      "gen_bangunan": "kerusakan struktural kecil diamati di beberapa bangunan, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\santa_rosa_wildfire_00000242_pre_disaster.png",
+      "post_image_path": "test_images\\santa_rosa_wildfire_00000242_post_disaster.png"
+    },
+    {
+      "index": 1744,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "gempa bumi",
+      "gt_bangunan": "Bukti perpindahan struktural diamati di banyak bangunan, terutama ke tengah dan kanan bawah gambar pasca bencana. Bahan atap menunjukkan refleksi spektral yang berubah, yang menunjukkan kerusakan parsial pada struktur bangunan atas.",
+      "gen_bangunan": "kerusakan struktural yang terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa bangunan menunjukkan pergeseran atap yang runtuh atau sebagian besar, yang menunjukkan kerusakan parsial.",
+      "pre_image_path": "test_images\\turkey_earthquake1_pre_246.png",
+      "post_image_path": "test_images\\turkey_earthquake1_sar_post_246.png"
+    },
+    {
+      "index": 1849,
+      "gt_bencana": "gempa bumi",
+      "gen_bencana": "tsunami",
+      "gt_bangunan": "Bangunan-bangunan di daerah pusat dan dekat sungai dalam gambar pasca bencana menunjukkan kerusakan struktural yang signifikan dan keberadaan puing-puing, dengan beberapa struktur tampak sangat rusak, sebagian hancur, atau sepenuhnya rata jika dibandingkan dengan gambar sebelum bencana.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak sebagian atau rusak, dengan perubahan refleksi yang menunjukkan kerusakan atau akumulasi puing-puing.",
+      "pre_image_path": "test_images\\turkey_earthquake4_pre_301.png",
+      "post_image_path": "test_images\\turkey_earthquake4_post_301.png"
+    },
+    {
+      "index": 2250,
+      "gt_bencana": "Tornado",
+      "gen_bencana": "badai",
+      "gt_bangunan": "Kerusakan struktural yang signifikan terlihat di pusat gambar pasca bencana, dengan kehancuran lengkap fasilitas tertutup dan struktur sekitarnya.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan kanan atas gambar. hal ini termasuk kerusakan atap dan puing-puing tersebar di beberapa bangunan yang tersebar di dekat pusat gambar.",
+      "pre_image_path": "test_images\\tuscaloosa_tornado_00000037_pre_disaster.png",
+      "post_image_path": "test_images\\tuscaloosa_tornado_00000037_post_disaster.png"
+    },
+    {
+      "index": 2343,
+      "gt_bencana": "Api",
+      "gen_bencana": "api",
+      "gt_bangunan": "Banyak bangunan yang utuh dalam gambar sebelum bencana menunjukkan kerusakan lengkap atau kerusakan atap yang parah dalam gambar pasca bencana, terutama berkonsentrasi di dekat pusat dan menyebar ke luar. Bukti struktur terbakar jelas, dengan banyak fondasi terpapar dan puing-puing tersebar.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar. beberapa struktur tampak hancur sepenuhnya atau",
+      "pre_image_path": "test_images\\woolsey_fire_00000585_pre_disaster.png",
+      "post_image_path": "test_images\\woolsey_fire_00000585_post_disaster.png"
+    },
+    {
+      "index": 2359,
+      "gt_bencana": "api",
+      "gen_bencana": "api",
+      "gt_bangunan": "Penghancuran yang signifikan diamati di berbagai struktur. atap dan jejak bangunan tertentu tidak lagi terlihat, terutama di kelompok bangunan pusat di dekat jalan bergiliran, yang menunjukkan runtuhnya struktural sebagian atau total.",
+      "gen_bangunan": "kerusakan struktural yang signifikan terlihat di beberapa bangunan, terutama di bagian tengah dan bawah gambar.",
+      "pre_image_path": "test_images\\woolsey_fire_00000833_pre_disaster.png",
+      "post_image_path": "test_images\\woolsey_fire_00000833_post_disaster.png"
+    }
+  ]
+}

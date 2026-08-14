@@ -62,14 +62,22 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from scripts.xai_attention_rollout import (  # noqa: E402
-    XaiEngine, OUT_DIR, EXAMPLES_DIR, GRID, N_PATCHES, PRE_COLS,
+    XaiEngine, OUT_DIR, EXAMPLES_DIR, GRID, N_PATCHES, PRE_COLS, ROOT,
     get_bencana, building_no_damage, get_section,
     mask_patches, select_examples, load_predictions, token_selectivity,
+    compute_rise_map, RISE_N_MASKS_DEFAULT, RISE_MASK_GRID_DEFAULT,
+    RISE_P_KEEP_DEFAULT, RISE_BATCH_DEFAULT,
 )
 from scripts.dataset import DisasterCaptionDataset  # noqa: E402
 
 DEL_FRACTIONS = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
-RANKINGS = ["rollout", "last_layer", "random"]
+# "rise" added for the perturbation-based (not attention-based) comparison -- see
+# `compute_rise_map` in xai_attention_rollout.py. Kept here as the canonical list of
+# RECOGNIZED ranking names; mode_delins's own DEFAULT active set (when --rankings is not
+# passed) is still exactly the original three, so re-running `--mode delins` with no new
+# flags reproduces the original results/xai/deletion_insertion_test.json unchanged.
+RANKINGS = ["rollout", "last_layer", "random", "rise"]
+DEFAULT_RANKINGS = ["rollout", "last_layer", "random"]
 SECTIONS = ["BENCANA", "BANGUNAN", "JALAN", "VEGETASI", "BADAN_AIR", "PERTANIAN", "KESIMPULAN"]
 
 
@@ -180,11 +188,34 @@ def mode_occlusion(args):
 # TEST 1 -- deletion / insertion
 # ======================================================================================
 
+def _resolve_rankings(args) -> list[str]:
+    if args.rankings:
+        active = [r.strip() for r in args.rankings.split(",") if r.strip()]
+    else:
+        active = list(DEFAULT_RANKINGS)
+    unknown = sorted(set(active) - set(RANKINGS))
+    if unknown:
+        raise ValueError(f"unknown ranking(s) {unknown} -- choose from {RANKINGS}")
+    if "random" not in active:            # always needed as the faithfulness control
+        active = active + ["random"]
+    return active
+
+
 def mode_delins(args):
+    active_rankings = _resolve_rankings(args)
+    out_dir = args.out_dir or OUT_DIR
+    if "rise" in active_rankings and os.path.abspath(out_dir) == os.path.abspath(OUT_DIR):
+        raise RuntimeError(
+            "refusing to write a RISE-inclusive run into the baseline results/xai/ directory "
+            "-- results/xai/deletion_insertion_test.json is the finalized Fase 6 comparison "
+            "target and must not be overwritten; pass --out_dir results/xai_rise (or similar)")
+    os.makedirs(out_dir, exist_ok=True)
+
     eng = XaiEngine(device=args.device)
     ds = DisasterCaptionDataset("test", bundle=eng.bundle, drop_unreadable=True)
     picked = select_examples(args.n, seed=args.seed)
     print(f"[select] {[r['index'] for r in picked]}")
+    print(f"[rankings] {active_rankings}  ->  {out_dir}")
     rng = np.random.default_rng(args.seed)
 
     all_patches = np.arange(N_PATCHES)
@@ -196,6 +227,10 @@ def mode_delins(args):
     for e, rec in enumerate(picked):
         i = rec["index"]
         pv = ds[i]["pixel_values"].unsqueeze(0).to(args.device)
+        # rollout/last_layer maps are cheap (no extra forward passes beyond the one
+        # generation already needed for the base caption), so always compute both regardless
+        # of which rankings were asked for -- this keeps base_captions' schema informative
+        # even when the run is RISE-only, and costs nothing measurable.
         tm = eng.explain(pv, index=i, variants=("rollout", "last_layer"))
         base_caption = tm.caption
         content = [j for j, c in enumerate(tm.is_content) if c]
@@ -211,10 +246,49 @@ def mode_delins(args):
         base_captions[i] = {
             "base_caption": base_caption,
             "token_selectivity_rollout": token_selectivity(tm.maps["rollout"][content]),
+            "token_selectivity_last_layer": token_selectivity(tm.maps["last_layer"][content]),
             "gt_bencana": get_bencana(rec["ground_truth_id"]),
             "gen_bencana": get_bencana(base_caption),
         }
-        for ranking in RANKINGS:
+
+        if "rise" in active_rankings:
+            # Teacher-forcing target: the spec calls for load_predictions()'s own
+            # `generated_caption` field, but that field was produced by a DIFFERENT run
+            # (generate_predictions_vision.py, batch size 48) than `tm.caption` (this run,
+            # batch size 1) -- measured directly on example idx=380, greedy decoding on this
+            # checkpoint is NOT batch-size-invariant (floating point reduction order differs),
+            # so the two captions diverge after a few tokens. tm.caption is *also* "the caption
+            # the model already generated without perturbation" for the pixel_values this
+            # function is about to perturb, so it is the right target here regardless.
+            #
+            # It is passed as `target_ids=[dec_id]+tm.emitted_ids`, NOT as text, for a second,
+            # independently-discovered reason: `compute_rise_map`'s text path re-tokenizes via
+            # `codec.encode(codec.decode(seq))`, and that text round-trip is NOT guaranteed
+            # token-count-stable (IndoReportCodec's detokenization rules can collapse tokens,
+            # e.g. repeated newlines) -- measured directly: example index 471 came back as 149
+            # RISE rows against 150 live `tm.emitted_ids`, caught by the shape check below
+            # rather than silently misaligning "content" indices. Using tm's own ids sidesteps
+            # the tokenizer round-trip entirely, so alignment holds by construction.
+            t_rise0 = time.time()
+            rise_map = compute_rise_map(
+                eng, rec, n_masks=args.n_masks, mask_grid=args.mask_grid,
+                p_keep=args.p_keep, batch_size=args.rise_batch_size, seed=args.seed,
+                target_ids=[eng.dec_id] + tm.emitted_ids)
+            rise_elapsed = time.time() - t_rise0
+            if rise_map.shape[0] != len(tm.emitted_ids):
+                raise RuntimeError(
+                    f"RISE produced {rise_map.shape[0]} token rows but tm has "
+                    f"{len(tm.emitted_ids)} emitted tokens for index {i} -- token alignment is "
+                    f"broken, refusing to silently rank patches against the wrong tokens")
+            orders["rise"] = np.argsort(-rise_map[content].mean(0).numpy())
+            base_captions[i]["token_selectivity_rise"] = token_selectivity(rise_map[content])
+            base_captions[i]["rise_seconds"] = rise_elapsed
+            print(f"    [rise] idx {i}: {args.n_masks} masks, {rise_elapsed:.1f}s "
+                  f"({rise_elapsed / args.n_masks * 1000:.1f} ms/mask), "
+                  f"token_selectivity={base_captions[i]['token_selectivity_rise']:.4f}",
+                  flush=True)
+
+        for ranking in active_rankings:
             order = orders[ranking]
             for direction in ("deletion", "insertion"):
                 batch, keys = [], []
@@ -245,6 +319,12 @@ def mode_delins(args):
               f"[{el/(e+1)/60:.1f} min/ex, ETA {(len(picked)-e-1)*el/(e+1)/60:.1f} min]",
               flush=True)
 
+    rise_times = [v["rise_seconds"] for v in base_captions.values() if "rise_seconds" in v]
+    if rise_times:
+        print(f"[rise timing] mean {np.mean(rise_times):.1f}s/example over {len(rise_times)} "
+              f"examples -> 12-example estimate {np.mean(rise_times) * 12 / 60:.1f} min "
+              f"(n_masks={args.n_masks}, batch_size={args.rise_batch_size})", flush=True)
+
     # CIDEr once, over the pooled corpus -> one shared IDF for every point on every curve
     print("[metrics] pooled CIDEr over "
           f"{len(pooled_gts)} (example, ranking, direction, k) pairs")
@@ -255,7 +335,7 @@ def mode_delins(args):
         r["cider_vs_intact"] = float(cider.get(r["key"], float("nan")))
 
     curves, aucs = {}, {}
-    for ranking in RANKINGS:
+    for ranking in active_rankings:
         curves[ranking], aucs[ranking] = {}, {}
         for direction in ("deletion", "insertion"):
             pts = []
@@ -279,7 +359,7 @@ def mode_delins(args):
             }
 
     verdict = {}
-    for ranking in ("rollout", "last_layer"):
+    for ranking in [r for r in active_rankings if r != "random"]:
         d = aucs[ranking]["deletion"]["token_f1_auc"] - aucs["random"]["deletion"]["token_f1_auc"]
         ins = aucs[ranking]["insertion"]["token_f1_auc"] - aucs["random"]["insertion"]["token_f1_auc"]
         verdict[ranking] = {
@@ -292,7 +372,7 @@ def mode_delins(args):
     out = {
         "n_examples": len(picked), "seed": args.seed,
         "example_indices": [r["index"] for r in picked],
-        "fractions": DEL_FRACTIONS, "rankings": RANKINGS,
+        "fractions": DEL_FRACTIONS, "rankings": active_rankings,
         "n_generations": len(records),
         "note": ("all scores compare a perturbed caption to the SAME model's caption on the "
                  "UNPERTURBED image; CIDEr shares one pooled IDF across every point"),
@@ -307,12 +387,23 @@ def mode_delins(args):
         "curves": curves, "auc": aucs, "verdict_vs_random": verdict,
         "records": records,
     }
-    os.makedirs(OUT_DIR, exist_ok=True)
-    p = os.path.join(OUT_DIR, "deletion_insertion_test.json")
+    if "rise" in active_rankings:
+        out["rise_config"] = {
+            "n_masks": args.n_masks, "mask_grid": args.mask_grid, "p_keep": args.p_keep,
+            "batch_size": args.rise_batch_size,
+            "teacher_forcing_target": (
+                "tm.caption (this run's live greedy regeneration at batch size 1), NOT "
+                "load_predictions()'s generated_caption field -- see the comment in "
+                "mode_delins for why those two differ"),
+        }
+        if rise_times:
+            out["rise_config"]["mean_seconds_per_example"] = float(np.mean(rise_times))
+
+    p = os.path.join(out_dir, "deletion_insertion_test.json")
     with open(p, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
 
-    _plot_curves(curves, os.path.join(OUT_DIR, "deletion_insertion_curves.png"))
+    _plot_curves(curves, os.path.join(out_dir, "deletion_insertion_curves.png"), active_rankings)
     print(json.dumps({"auc": aucs, "verdict_vs_random": verdict}, indent=2))
     print(f"[done] {p}")
 
@@ -326,7 +417,11 @@ def per_example_auc(records, metric="token_f1"):
     they feed straight into the project's standard paired_bootstrap.
     """
     out: dict[tuple[str, str], dict[int, float]] = {}
-    for ranking in RANKINGS:
+    # data-driven, not the global RANKINGS constant: this function is now called on TWO
+    # differently-shaped files (the original 3-ranking results/xai/ baseline, and the
+    # RISE-inclusive results/xai_rise/ run), and must not silently produce empty per-example
+    # dicts for a ranking that a given file doesn't contain (or skip one that it does).
+    for ranking in sorted({r["ranking"] for r in records}):
         for direction in ("deletion", "insertion"):
             per_idx = {}
             idxs = sorted({r["index"] for r in records})
@@ -343,8 +438,9 @@ def significance(records, metric="token_f1"):
     from scripts.compute_metrics import paired_bootstrap
     pe = per_example_auc(records, metric)
     idxs = sorted(pe[("random", "deletion")].keys())
+    compare_rankings = sorted({r for (r, _d) in pe} - {"random"})
     res = {}
-    for ranking in ("rollout", "last_layer"):
+    for ranking in compare_rankings:
         res[ranking] = {}
         for direction in ("deletion", "insertion"):
             a = [pe[(ranking, direction)][i] for i in idxs]
@@ -366,9 +462,15 @@ def significance(records, metric="token_f1"):
 
 def mode_reanalyze(args):
     """Recompute curves/AUC/significance from the ALREADY GENERATED captions in
-    results/xai/deletion_insertion_test.json -- no model, no new generations, so the numbers
-    are provably about the same 792 captions the first run produced."""
-    p = os.path.join(OUT_DIR, "deletion_insertion_test.json")
+    <out_dir>/deletion_insertion_test.json -- no model, no new generations, so the numbers
+    are provably about the same captions the delins run produced.
+
+    --out_dir defaults to results/xai (the original baseline) for backward compatibility, but
+    can point at results/xai_rise instead; either way this only reads and rewrites files
+    inside that ONE directory, so it is safe to run against the RISE output without touching
+    the baseline."""
+    out_dir = args.out_dir or OUT_DIR
+    p = os.path.join(out_dir, "deletion_insertion_test.json")
     with open(p, encoding="utf-8") as f:
         d = json.load(f)
     recs = d["records"]
@@ -376,9 +478,10 @@ def mode_reanalyze(args):
     d["significance_paired_bootstrap"] = sig
     with open(p, "w", encoding="utf-8") as f:
         json.dump(d, f, indent=2, ensure_ascii=False)
+    rankings_present = sorted({r["ranking"] for r in recs} - {"random"})
     slim = {m: {r: {dd: {k: v for k, v in sig[m][r][dd].items() if k != "_per_example_auc"}
                     for dd in ("deletion", "insertion")}
-                for r in ("rollout", "last_layer")} for m in sig}
+                for r in rankings_present} for m in sig}
     print(json.dumps(slim, indent=2))
     print(f"[done] significance added to {p}")
 
@@ -450,7 +553,7 @@ def mode_summary(args):
     print(f"[done] {p}")
 
 
-def _plot_curves(curves, out_png):
+def _plot_curves(curves, out_png, rankings=RANKINGS):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -458,7 +561,7 @@ def _plot_curves(curves, out_png):
     for col, metric in enumerate(("token_f1", "cider")):
         for row, direction in enumerate(("deletion", "insertion")):
             ax = axes[row][col]
-            for ranking in RANKINGS:
+            for ranking in rankings:
                 pts = curves[ranking][direction]
                 ax.plot([p["frac"] for p in pts], [p[metric] for p in pts],
                         marker="o", ms=3, label=ranking)
@@ -478,16 +581,118 @@ def _plot_curves(curves, out_png):
     print(f"[plot] {out_png}")
 
 
+def mode_rise_compare(args):
+    """Assemble the paper-ready 4-method table: rollout / last_layer / random / rise x
+    {token_selectivity, deletion AUC, insertion AUC}.
+
+    Reads results/xai_rise/deletion_insertion_test.json (this project's RISE run, produced by
+    `--mode delins --rankings rise,rollout,last_layer,random --out_dir results/xai_rise`) as
+    the SOLE source for all four methods' numbers, so every number in the table comes from one
+    internally-consistent run (same 12 examples, same code, same session) rather than mixing
+    two runs done at different times. The ORIGINAL results/xai/ baseline is read too, but only
+    to print a side-by-side sanity check that this run's rollout/last_layer numbers land close
+    to the already-published Fase 6 numbers -- it is never written to.
+    """
+    rise_dir = args.out_dir or os.path.join(ROOT, "results", "xai_rise")
+    with open(os.path.join(rise_dir, "deletion_insertion_test.json"), encoding="utf-8") as f:
+        rise = json.load(f)
+    rankings_here = rise["rankings"]
+
+    table = {}
+    for ranking in rankings_here:
+        sel_key = f"token_selectivity_{ranking}"
+        sel_vals = [v[sel_key] for v in rise["base_captions"].values() if sel_key in v]
+        entry = {
+            "n_examples": rise["n_examples"],
+            "token_selectivity_mean": float(np.mean(sel_vals)) if sel_vals else None,
+            "token_selectivity_n": len(sel_vals),
+            "deletion_auc_token_f1": rise["auc"][ranking]["deletion"]["token_f1_auc"],
+            "insertion_auc_token_f1": rise["auc"][ranking]["insertion"]["token_f1_auc"],
+        }
+        if ranking == "random":
+            entry["token_selectivity_note"] = (
+                "undefined -- a random ranking has no per-token importance map to correlate")
+        table[ranking] = entry
+    if "rise_config" in rise and "rise" in table:
+        table["rise"]["rise_config"] = rise["rise_config"]
+
+    baseline_note = None
+    baseline_path = os.path.join(OUT_DIR, "deletion_insertion_test.json")
+    if os.path.exists(baseline_path):
+        with open(baseline_path, encoding="utf-8") as f:
+            base = json.load(f)
+        base_sel = [v["token_selectivity_rollout"] for v in base["base_captions"].values()]
+        baseline_note = {
+            "source": "results/xai/deletion_insertion_test.json (READ ONLY -- not modified)",
+            "n_examples": base["n_examples"],
+            "token_selectivity_rollout_mean": float(np.mean(base_sel)),
+            "rollout_deletion_auc_token_f1": base["auc"]["rollout"]["deletion"]["token_f1_auc"],
+            "rollout_insertion_auc_token_f1": base["auc"]["rollout"]["insertion"]["token_f1_auc"],
+            "purpose": ("cross-check only: confirms this RISE run's independently-regenerated "
+                       "rollout numbers land close to the already-published Fase 6 baseline"),
+        }
+
+    out = {
+        "note": ("token_selectivity: mean pairwise Pearson r between per-token patch "
+                 "importance maps within one example -- 1.0 = token-invariant (every "
+                 "generated word gets the same map, i.e. NOT faithful at the word level). "
+                 "AUC metrics: area under the token-F1-vs-fraction perturbation curve "
+                 "(deletion: LOWER = more faithful; insertion: HIGHER = more faithful), "
+                 "computed against a seeded random-patch-order control under identical "
+                 "conditions. All numbers on this page come from one single run -- "
+                 f"{rise_dir}/deletion_insertion_test.json."),
+        "table": table,
+        "baseline_cross_check": baseline_note,
+    }
+    os.makedirs(rise_dir, exist_ok=True)
+    p = os.path.join(rise_dir, "faithfulness_summary.json")
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2, ensure_ascii=False)
+
+    order = [r for r in ("rollout", "last_layer", "random", "rise") if r in table]
+    lines = ["| method | token_selectivity (mean pairwise r) | deletion AUC (token-F1) | insertion AUC (token-F1) |",
+            "|---|---|---|---|"]
+    for ranking in order:
+        t = table[ranking]
+        sel = t["token_selectivity_mean"]
+        sel_s = f"{sel:.4f}" if sel is not None else "n/a"
+        lines.append(f"| {ranking} | {sel_s} | {t['deletion_auc_token_f1']:.4f} | "
+                     f"{t['insertion_auc_token_f1']:.4f} |")
+    md = "\n".join(lines) + "\n"
+    md_p = os.path.join(rise_dir, "comparison_table.md")
+    with open(md_p, "w", encoding="utf-8") as f:
+        f.write(md)
+    print(md)
+    print(f"[done] {p}")
+    print(f"[done] {md_p}")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["occlusion", "delins", "reanalyze", "summary"],
+    ap.add_argument("--mode",
+                    choices=["occlusion", "delins", "reanalyze", "summary", "rise_compare"],
                     required=True)
     ap.add_argument("--n", type=int, default=8)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    ap.add_argument("--rankings", default=None,
+                    help="comma-separated subset of " + ",".join(RANKINGS) +
+                    f" (delins mode only; default {','.join(DEFAULT_RANKINGS)})")
+    ap.add_argument("--out_dir", default=None,
+                    help="override the output directory (delins/reanalyze/rise_compare); "
+                    "defaults to results/xai. Required to be non-default when --rankings "
+                    "includes 'rise'.")
+    ap.add_argument("--n_masks", type=int, default=RISE_N_MASKS_DEFAULT,
+                    help="RISE: number of random masks per example")
+    ap.add_argument("--mask_grid", type=int, default=RISE_MASK_GRID_DEFAULT,
+                    help="RISE: coarse mask resolution before upsampling to the 24x24 patch grid")
+    ap.add_argument("--p_keep", type=float, default=RISE_P_KEEP_DEFAULT,
+                    help="RISE: Bernoulli keep-probability per coarse mask cell")
+    ap.add_argument("--rise_batch_size", type=int, default=RISE_BATCH_DEFAULT,
+                    help="RISE: masks per forward-pass batch")
     args = ap.parse_args()
-    {"occlusion": mode_occlusion, "delins": mode_delins,
-     "reanalyze": mode_reanalyze, "summary": mode_summary}[args.mode](args)
+    {"occlusion": mode_occlusion, "delins": mode_delins, "reanalyze": mode_reanalyze,
+     "summary": mode_summary, "rise_compare": mode_rise_compare}[args.mode](args)
 
 
 if __name__ == "__main__":

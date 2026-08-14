@@ -1,0 +1,64 @@
+{
+  "n_paired": 2362,
+  "internvl3_epoch1": {
+    "checkpoint": "checkpoints/internvl3_run1/best (val_loss=0.8709)",
+    "params": "938,193,024 (0.938B), LoRA 1,327,104 trainable (0.14%)",
+    "cider": 0.08458567181340984,
+    "bleu4": 0.19498343130526483,
+    "rougeL": 0.40808726289641484,
+    "bertscore_f1": 0.7902942383370088,
+    "n": 2362,
+    "bencana_exact_match_rate": 0.43268416596104997,
+    "building_no_damage_rate_generated": 0.825571549534293,
+    "building_no_damage_rate_reference": 0.3420829805249788,
+    "distinct_generated_captions": 1810,
+    "distinct_generated_fraction": 0.7662997459779848
+  },
+  "internvl3_epoch2": {
+    "checkpoint": "checkpoints/internvl3_run1_ep2/best (val_loss=0.8055, resumed from epoch1)",
+    "params": "938,193,024 (0.938B), LoRA 1,327,104 trainable (0.14%)",
+    "cider": 0.13273283706175573,
+    "bleu4": 0.2133810898542384,
+    "rougeL": 0.4149315842724882,
+    "bertscore_f1": 0.7954144415514233,
+    "n": 2362,
+    "bencana_exact_match_rate": 0.5309060118543607,
+    "building_no_damage_rate_generated": 0.823454699407282,
+    "building_no_damage_rate_reference": 0.3420829805249788,
+    "distinct_generated_captions": 2288,
+    "distinct_generated_fraction": 0.9686706181202371
+  },
+  "blip_vision_lora_final": {
+    "checkpoint": "checkpoints/full_run_v3_vision/best (30 epochs across 3 phases, val_loss=1.4312)",
+    "params": "223,971,644 (0.224B)",
+    "cider": 0.12016344750790448,
+    "bleu4": 0.20949403939622924,
+    "rougeL": 0.415622151100196,
+    "bertscore_f1": 0.7971238466413418,
+    "n": 2362,
+    "bencana_exact_match_rate": 0.722692633361558,
+    "building_no_damage_rate_generated": 0.7849280270956817,
+    "building_no_damage_rate_reference": 0.3420829805249788,
+    "distinct_generated_captions": 2043,
+    "distinct_generated_fraction": 0.8649449618966977
+  },
+  "significance_epoch2_vs_epoch1_cider": {
+    "observed_mean_diff": 0.048147165248345905,
+    "ci95_low": 0.036644150350454895,
+    "ci95_high": 0.05944760209050067,
+    "frac_bootstrap_resamples_favoring_ours": 1.0,
+    "two_sided_p_value_approx": 0.0,
+    "n_bootstrap": 10000,
+    "n_paired_examples": 2362
+  },
+  "significance_epoch2_vs_blip_cider": {
+    "observed_mean_diff": 0.012569389553851278,
+    "ci95_low": -0.0016497472883238544,
+    "ci95_high": 0.026484997428060743,
+    "frac_bootstrap_resamples_favoring_ours": 0.9596,
+    "two_sided_p_value_approx": 0.0808,
+    "n_bootstrap": 10000,
+    "n_paired_examples": 2362
+  },
+  "caveat": "InternVL3 trained for only 2 epochs (time-boxed decisions after each epoch), vs 30 epochs across 3 phases for BLIP's final model. Train/val loss for InternVL3 was still decreasing at both stop points (0.8709 -> 0.8055 epoch1->epoch2), i.e. NOT converged -- these numbers likely understate InternVL3's ceiling. NOT an apples-to-apples architecture comparison (different scale, different amount of fine-tuning, different pretrained tokenizer/backbone)."
+}

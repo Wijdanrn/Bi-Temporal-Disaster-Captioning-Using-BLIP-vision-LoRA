@@ -1,0 +1,50 @@
+{
+  "note": "token_selectivity: mean pairwise Pearson r between per-token patch importance maps within one example -- 1.0 = token-invariant (every generated word gets the same map, i.e. NOT faithful at the word level). AUC metrics: area under the token-F1-vs-fraction perturbation curve (deletion: LOWER = more faithful; insertion: HIGHER = more faithful), computed against a seeded random-patch-order control under identical conditions. All numbers on this page come from one single run -- results/xai_rise/deletion_insertion_test.json.",
+  "table": {
+    "rise": {
+      "n_examples": 12,
+      "token_selectivity_mean": 0.9501897245645523,
+      "token_selectivity_n": 12,
+      "deletion_auc_token_f1": 0.7430732075109159,
+      "insertion_auc_token_f1": 0.7848921783431125,
+      "rise_config": {
+        "n_masks": 1000,
+        "mask_grid": 8,
+        "p_keep": 0.5,
+        "batch_size": 16,
+        "teacher_forcing_target": "tm.caption (this run's live greedy regeneration at batch size 1), NOT load_predictions()'s generated_caption field -- see the comment in mode_delins for why those two differ",
+        "mean_seconds_per_example": 41.79526521762212
+      }
+    },
+    "rollout": {
+      "n_examples": 12,
+      "token_selectivity_mean": 0.9996782143910726,
+      "token_selectivity_n": 12,
+      "deletion_auc_token_f1": 0.7578938974528474,
+      "insertion_auc_token_f1": 0.7810760194402676
+    },
+    "last_layer": {
+      "n_examples": 12,
+      "token_selectivity_mean": 0.9989508738120397,
+      "token_selectivity_n": 12,
+      "deletion_auc_token_f1": 0.7515075928949541,
+      "insertion_auc_token_f1": 0.7861500741395976
+    },
+    "random": {
+      "n_examples": 12,
+      "token_selectivity_mean": null,
+      "token_selectivity_n": 0,
+      "deletion_auc_token_f1": 0.7697877704470257,
+      "insertion_auc_token_f1": 0.7773582756745944,
+      "token_selectivity_note": "undefined -- a random ranking has no per-token importance map to correlate"
+    }
+  },
+  "baseline_cross_check": {
+    "source": "results/xai/deletion_insertion_test.json (READ ONLY -- not modified)",
+    "n_examples": 12,
+    "token_selectivity_rollout_mean": 0.9996782044569651,
+    "rollout_deletion_auc_token_f1": 0.7578938974528474,
+    "rollout_insertion_auc_token_f1": 0.7810760194402676,
+    "purpose": "cross-check only: confirms this RISE run's independently-regenerated rollout numbers land close to the already-published Fase 6 baseline"
+  }
+}

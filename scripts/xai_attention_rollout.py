@@ -428,21 +428,194 @@ def composite_pil(engine: XaiEngine, rec: dict):
     return make_composite(pre, post, engine.spec)
 
 
-def mask_patches(pixel_values: torch.Tensor, patch_idx, spec: ImageSpec) -> torch.Tensor:
-    """Gray-fill the given flat patch indices (0..575) with the processor's mean colour.
+def _pad_fill(pixel_values: torch.Tensor, spec: ImageSpec) -> torch.Tensor:
+    """The uint8 pad colour, normalized, as a (1,3,1,1) broadcast tensor.
 
     pad_color is the uint8 colour that normalizes to ~0 (see dataset.ImageSpec.pad_color) --
-    i.e. the least disruptive fill available, which is what an occlusion test needs: the
-    signal removed should be the image content, not "a big black rectangle appeared".
+    i.e. the least disruptive fill available, which is what a masking/occlusion test needs:
+    the signal removed should be the image content, not "a big black rectangle appeared".
+    Shared by `mask_patches` (hard fill) and `blend_patches` (continuous RISE fill) so there
+    is exactly one place that defines what "neutral" means for this model.
     """
-    out = pixel_values.clone()
-    fill = torch.tensor([(c / 255.0 - m) / s for c, m, s in
+    return torch.tensor([(c / 255.0 - m) / s for c, m, s in
                          zip(spec.pad_color, spec.mean, spec.std)],
-                        dtype=out.dtype, device=out.device).view(1, 3, 1, 1)
+                        dtype=pixel_values.dtype, device=pixel_values.device).view(1, 3, 1, 1)
+
+
+def mask_patches(pixel_values: torch.Tensor, patch_idx, spec: ImageSpec) -> torch.Tensor:
+    """Gray-fill the given flat patch indices (0..575) with the processor's mean colour."""
+    out = pixel_values.clone()
+    fill = _pad_fill(out, spec)
     for p in patch_idx:
         r, c = divmod(int(p), GRID)
         out[:, :, r * 16:(r + 1) * 16, c * 16:(c + 1) * 16] = fill
     return out
+
+
+def blend_patches(pixel_values: torch.Tensor, patch_alpha: torch.Tensor, spec: ImageSpec) -> torch.Tensor:
+    """Continuous per-patch alpha-blend toward `spec.pad_color` -- RISE's analogue of
+    `mask_patches`'s hard all-or-nothing fill.
+
+    pixel_values : (1,3,384,384) ONE source image, broadcast across the B masks.
+    patch_alpha  : (B, GRID, GRID) or (B, N_PATCHES) in [0,1]; 1 = keep original content,
+                   0 = fully replaced by pad_color. Values are constant within a patch (the
+                   RISE mask is defined at 24x24 patch resolution, see `_generate_rise_masks`),
+                   so upsampling to pixel space is a plain 16x nearest-neighbour repeat, not
+                   an interpolation that would blur patch boundaries.
+    -> (B, 3, 384, 384)
+    """
+    if patch_alpha.dim() == 2 and patch_alpha.shape[-1] == N_PATCHES:
+        patch_alpha = patch_alpha.reshape(-1, GRID, GRID)
+    b = patch_alpha.shape[0]
+    alpha = patch_alpha.to(device=pixel_values.device, dtype=pixel_values.dtype).unsqueeze(1)
+    alpha_full = F.interpolate(alpha, size=(GRID * 16, GRID * 16), mode="nearest")  # (B,1,384,384)
+    fill = _pad_fill(pixel_values, spec)
+    base = pixel_values.expand(b, -1, -1, -1)
+    return alpha_full * base + (1.0 - alpha_full) * fill
+
+
+# ======================================================================================
+# RISE (Petsiuk, Das & Saenko 2018) -- perturbation-based explanation, PER TOKEN
+# ======================================================================================
+# Rollout (above) is an attention-flow ESTIMATE: it never perturbs the image, it only
+# re-derives, algebraically, "where did attention mass go". The token_selectivity finding in
+# mode_selftest (r=0.9997 between different words' maps) could in principle be a property of
+# attention itself rather than of the model's actual sensitivity to the image -- the only way
+# to tell those apart is a method that never looks at attention weights at all. RISE instead
+# ablates random subsets of the INPUT and measures the effect on the OUTPUT directly: an
+# importance map built this way is faithful by construction (it IS a measurement of causal
+# effect, via many correlated random probes), so if IT also comes back token-invariant, that
+# is much stronger evidence that the model's caption really doesn't read different sections
+# off different regions -- not just that rollout is a bad estimator.
+#
+# RISE_DEFAULTS mirror Petsiuk et al.'s paper defaults (N=1000-8000 masks, s=7-8, p1=0.5); s=8
+# and N=1000 are picked here as the starting point given the 8GB VRAM / single-GPU budget --
+# see the timing report printed by `compute_rise_map` before committing to a full run.
+
+RISE_MASK_GRID_DEFAULT = 8
+RISE_N_MASKS_DEFAULT = 1000
+RISE_P_KEEP_DEFAULT = 0.5
+RISE_BATCH_DEFAULT = 16
+
+
+def _generate_rise_masks(n_masks: int, mask_grid: int, target_size: int, p_keep: float,
+                          seed: int) -> torch.Tensor:
+    """Standard RISE mask generation (Petsiuk et al. 2018, Algorithm 1).
+
+    Sample a COARSE (mask_grid x mask_grid) i.i.d. Bernoulli(p_keep) grid, bilinear-upsample
+    past target_size, then crop with a random per-mask (x, y) offset. The offset is what turns
+    hard mask_grid x mask_grid blocks into smoothly-varying continuous alpha: without it every
+    mask's cell boundaries would land on the exact same 3 columns/rows, and the resulting maps
+    would inherit hard edges at those fixed positions instead of averaging them out.
+
+    -> (n_masks, target_size, target_size) float32 in [0, 1], on CPU.
+    """
+    rng = np.random.default_rng(seed)
+    cell = int(np.ceil(target_size / mask_grid))
+    up = (mask_grid + 1) * cell
+    grid = (rng.random((n_masks, mask_grid, mask_grid)) < p_keep).astype(np.float32)
+    grid_t = torch.from_numpy(grid).unsqueeze(1)                          # (N,1,s,s)
+    up_t = F.interpolate(grid_t, size=(up, up), mode="bilinear", align_corners=False)
+    off_x = rng.integers(0, cell, size=n_masks)
+    off_y = rng.integers(0, cell, size=n_masks)
+    masks = torch.empty(n_masks, target_size, target_size, dtype=torch.float32)
+    for i in range(n_masks):
+        x, y = int(off_x[i]), int(off_y[i])
+        masks[i] = up_t[i, 0, x:x + target_size, y:y + target_size]
+    return masks
+
+
+@torch.no_grad()
+def compute_rise_map(engine: "XaiEngine", example: dict, n_masks: int = RISE_N_MASKS_DEFAULT,
+                     mask_grid: int = RISE_MASK_GRID_DEFAULT, p_keep: float = RISE_P_KEEP_DEFAULT,
+                     batch_size: int = RISE_BATCH_DEFAULT, seed: int = 0,
+                     target_ids: list[int] | None = None) -> torch.Tensor:
+    """RISE, extended to produce ONE importance map PER EMITTED TOKEN instead of one map for
+    one scalar score.
+
+    importance[t, patch] = E_mask[ mask[patch] * log p(token_t | image (dot) mask) ]
+
+    -- Petsiuk et al.'s eq. (2) (S = E[M * f(I (dot) M)]) applied to the per-token
+    teacher-forced log-probability instead of a single class probability. The paper's extra
+    1/(N*p_keep) normalization is a single scalar shared by every patch and every token for a
+    fixed mask distribution, so it cannot change the argsort ranking `mode_delins` reads off
+    this map; it is left out on purpose rather than silently applied, and this docstring is
+    the record of that choice.
+
+    Cost design: for EACH of the n_masks perturbed images, ONE teacher-forced decoder forward
+    pass (no autoregressive generation, no gradients) yields log p(token_t | masked image) for
+    EVERY token t in the caption simultaneously -- so the cost is O(n_masks) forward passes,
+    not O(n_masks * n_tokens). The teacher-forcing target is the caption the model ALREADY
+    produced on the UNPERTURBED image -- RISE explains that fixed prediction's causal
+    dependence on the image, not whatever new guess a perturbed model might make with fresh
+    autoregressive decoding (which would also be ~n_tokens times slower for no benefit).
+
+    TOKEN SOURCE -- read this before passing `example["generated_caption"]` and nothing else.
+    Two ways to supply the target sequence, in order of preference:
+      1. `target_ids`: the FULL [DEC]-prefixed id sequence (i.e. `[engine.dec_id] + emitted_ids`
+         from an `XaiEngine.explain()` TokenMaps), used VERBATIM -- no tokenizer round-trip.
+         This is the only option that GUARANTEES the returned map's row count matches another
+         caller's `tm.emitted_ids` exactly, which matters whenever the caller needs to index
+         both by the same `content`/`is_content` mask (e.g. mode_delins).
+      2. `example["generated_caption"]` (text), re-tokenized via `engine.codec.encode()` --
+         used only if `target_ids` is None. THIS IS NOT GUARANTEED TOKEN-COUNT-STABLE: decode
+         -> encode is a TEXT round-trip, and `IndoReportCodec`'s detokenization rules (e.g.
+         collapsing repeated newlines) can merge or drop tokens that survived in the original
+         id sequence. Measured failure: example index 471 in this project's 12-example set
+         produced 149 rows this way against a live `tm.emitted_ids` of length 150. Safe to use
+         ONLY when the caller has no id sequence to hand it (e.g. driving RISE straight off
+         `results/predictions_test_vision.jsonl` with no accompanying `XaiEngine.explain()`
+         call) and does not need row-for-row alignment with anything else.
+
+    example must have: pre_image_path, post_image_path (used to build the composite image via
+    `composite_pil`), and generated_caption (only read when target_ids is None).
+    Returns (n_emitted_tokens, N_PATCHES) float32 tensor on CPU, UNNORMALIZED (rows are NOT a
+    probability distribution -- they are signed importance scores, since log-probabilities are
+    always <= 0.  Higher = more evidence this patch was PRESENT when this token got a higher
+    log-prob under masking; callers that need a ranking should argsort, not renormalize).
+    """
+    device = engine.device
+    img = composite_pil(engine, example)
+    pv = engine.spec.to_tensor(img).unsqueeze(0).to(device)
+
+    if target_ids is not None:
+        seq = torch.tensor(target_ids, device=device)
+    else:
+        seq_ids = engine.codec.encode(example["generated_caption"])
+        seq = torch.tensor(seq_ids, device=device)
+    if seq[0].item() != engine.dec_id:
+        raise RuntimeError(f"seq[0]={seq[0].item()} != [DEC]={engine.dec_id} -- "
+                           f"target sequence does not have the expected [DEC] prefix")
+    inp = seq[:-1]                                    # (n_emitted,) fed to the decoder
+    tgt = seq[1:]                                      # (n_emitted,) teacher-forcing targets
+    n_emitted = int(tgt.shape[0])
+
+    masks = _generate_rise_masks(n_masks, mask_grid, GRID, p_keep, seed)   # (n_masks,GRID,GRID) cpu
+    importance = torch.zeros(n_emitted, N_PATCHES, dtype=torch.float32, device=device)
+
+    for start in range(0, n_masks, batch_size):
+        batch_masks = masks[start:start + batch_size].to(device)          # (B,GRID,GRID)
+        b = batch_masks.shape[0]
+        blended = blend_patches(pv, batch_masks, engine.spec)              # (B,3,384,384)
+        img_embeds, _ = engine.image_embeds(blended, want_attn=False)      # (B,577,768)
+        enc_mask = torch.ones(img_embeds.shape[:-1], dtype=torch.long, device=device)
+        inp_b = inp.unsqueeze(0).expand(b, -1)
+        out = engine.base.text_decoder(
+            input_ids=inp_b,
+            attention_mask=torch.ones_like(inp_b),
+            encoder_hidden_states=img_embeds,
+            encoder_attention_mask=enc_mask,
+            output_attentions=False,
+            use_cache=False,
+        )
+        logprobs = F.log_softmax(out.logits.float(), dim=-1)               # (B, n_emitted, vocab)
+        tgt_b = tgt.unsqueeze(0).expand(b, -1)
+        token_logp = logprobs.gather(-1, tgt_b.unsqueeze(-1)).squeeze(-1)  # (B, n_emitted)
+        flat_masks = batch_masks.reshape(b, -1)                            # (B, N_PATCHES)
+        importance += torch.einsum("bt,bp->tp", token_logp, flat_masks)
+        del blended, img_embeds, out, logprobs, token_logp, flat_masks, batch_masks
+
+    return (importance / n_masks).cpu()
 
 
 # ======================================================================================

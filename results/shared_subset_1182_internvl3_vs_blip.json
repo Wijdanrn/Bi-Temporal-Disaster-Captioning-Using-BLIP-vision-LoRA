@@ -1,0 +1,61 @@
+{
+  "n_shared_subset": 1182,
+  "note": "Identical 1182 test items as the friend's Qwen2.5-VL-3B evaluation (test_filenames_first_1182.csv) -- once Qwen's own eval on this subset lands, it can be placed directly alongside these numbers for a genuine 3-way comparison. This subset is a non-random 'first-N' slice covering only 6/10 disaster types (see results/shared_subset_1182_matched_indices.json for exact coverage) -- valid for head-to-head comparison on identical items, NOT representative of full-test-set performance (use results/internvl3_epoch1_vs_epoch2_vs_blip.json for the full-2362-set numbers instead).",
+  "internvl3_epoch1": {
+    "checkpoint": "checkpoints/internvl3_run1/best (val_loss=0.8709)",
+    "cider": 0.08014824344615563,
+    "bleu4": 0.18982977762498898,
+    "rougeL": 0.4025486255712414,
+    "bertscore_f1": 0.7876853845042827,
+    "n": 1182,
+    "bencana_exact_match_rate": 0.26818950930626057,
+    "building_no_damage_rate_generated": 0.8138747884940778,
+    "building_no_damage_rate_reference": 0.377326565143824,
+    "distinct_generated_captions": 966,
+    "distinct_generated_fraction": 0.817258883248731
+  },
+  "internvl3_epoch2": {
+    "checkpoint": "checkpoints/internvl3_run1_ep2/best (val_loss=0.8055)",
+    "cider": 0.12231321727111125,
+    "bleu4": 0.2072634717202187,
+    "rougeL": 0.4078844196543814,
+    "bertscore_f1": 0.7924240537605511,
+    "n": 1182,
+    "bencana_exact_match_rate": 0.3629441624365482,
+    "building_no_damage_rate_generated": 0.8164128595600677,
+    "building_no_damage_rate_reference": 0.377326565143824,
+    "distinct_generated_captions": 1164,
+    "distinct_generated_fraction": 0.9847715736040609
+  },
+  "blip_vision_lora_final": {
+    "checkpoint": "checkpoints/full_run_v3_vision/best (30 epochs)",
+    "cider": 0.10706512208728806,
+    "bleu4": 0.20562093877209978,
+    "rougeL": 0.4112235040431255,
+    "bertscore_f1": 0.7949085859376969,
+    "n": 1182,
+    "bencana_exact_match_rate": 0.5989847715736041,
+    "building_no_damage_rate_generated": 0.733502538071066,
+    "building_no_damage_rate_reference": 0.377326565143824,
+    "distinct_generated_captions": 1090,
+    "distinct_generated_fraction": 0.922165820642978
+  },
+  "significance_epoch2_vs_blip_cider": {
+    "observed_mean_diff": 0.01524809518382318,
+    "ci95_low": -0.003354988726319844,
+    "ci95_high": 0.03266953638224036,
+    "frac_bootstrap_resamples_favoring_ours": 0.9493,
+    "two_sided_p_value_approx": 0.1014,
+    "n_bootstrap": 10000,
+    "n_paired_examples": 1182
+  },
+  "significance_epoch2_vs_epoch1_cider": {
+    "observed_mean_diff": 0.04216497382495563,
+    "ci95_low": 0.027422291388318056,
+    "ci95_high": 0.05676161431524855,
+    "frac_bootstrap_resamples_favoring_ours": 1.0,
+    "two_sided_p_value_approx": 0.0,
+    "n_bootstrap": 10000,
+    "n_paired_examples": 1182
+  }
+}

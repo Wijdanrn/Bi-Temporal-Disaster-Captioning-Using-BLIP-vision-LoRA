@@ -19,6 +19,9 @@ data/raw/
 .env
 .env.*
 
+# Copy-paste prompts written for LLM assistant sessions -- kept locally, never pushed
+prompt_*.md
+
 # Python
 __pycache__/
 *.pyc

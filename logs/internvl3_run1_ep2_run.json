@@ -1,0 +1,22 @@
+{
+  "run_name": "internvl3_run1_ep2",
+  "repo": "OpenGVLab/InternVL3-1B-hf",
+  "epochs": 1,
+  "batch_size": 1,
+  "grad_accum": 4,
+  "lr": 0.0001,
+  "lora_targets": [
+    "q_proj",
+    "v_proj"
+  ],
+  "lora_scope": "language_model + vision_tower",
+  "trainable_params": 1327104,
+  "total_params": 939520128,
+  "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU",
+  "gpu_mem_mb": 8546.484224,
+  "total_wall_clock_s": 8632.1,
+  "total_wall_clock_h": 2.398,
+  "global_step": 1749,
+  "best_val_loss": 0.8054880830890352,
+  "peak_gpu_mem_mb": 4737.6
+}

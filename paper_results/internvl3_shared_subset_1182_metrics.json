@@ -1,0 +1,42 @@
+{
+  "n_matched_with_friend_qwen25vl3b_eval": 1182,
+  "note": "Identical test items to the friend's Qwen2.5-VL-3B evaluation subset (test_filenames_first_1182.csv) -- a non-random 'first-N' slice covering only 6/10 disaster types in our test set (missing: api, api liar, kebakaran hutan, tsunami). Valid for a fair head-to-head vs Qwen2.5-VL-3B on matched items, but NOT representative of full test-set performance -- see results/metrics.json for the authoritative full 2,362-item numbers.",
+  "disaster_types_covered": [
+    "badai",
+    "banjir",
+    "gempa bumi",
+    "gunung berapi",
+    "ledakan",
+    "tornado"
+  ],
+  "disaster_types_missing": [
+    "api",
+    "api liar",
+    "kebakaran hutan",
+    "tsunami"
+  ],
+  "baseline_zero_shot": {
+    "cider": 8.256800675290277e-05,
+    "bleu4": 8.88164444260762e-15,
+    "rougeL": 0.019165090394705125,
+    "bertscore_f1": 0.34709237756715006
+  },
+  "text_only_lora": {
+    "cider": 0.08453364871271897,
+    "bleu4": 0.19892723273077362,
+    "rougeL": 0.40389820374143837,
+    "bertscore_f1": 0.7913092683414518
+  },
+  "text_plus_vision_lora_FINAL": {
+    "cider": 0.10706512208728806,
+    "bleu4": 0.20562093877209978,
+    "rougeL": 0.4112235040431255,
+    "bertscore_f1": 0.7949085842231809,
+    "n": 1182,
+    "bencana_exact_match_rate": 0.5989847715736041,
+    "building_no_damage_rate_generated": 0.733502538071066,
+    "building_no_damage_rate_reference": 0.377326565143824,
+    "distinct_generated_captions": 1090,
+    "distinct_generated_fraction": 0.922165820642978
+  }
+}
